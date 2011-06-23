@@ -1,0 +1,6 @@
+.form
+  %h1 Add a Blog
+  - form_for @post do |f|
+    = f.error_messages
+    = render :partial => 'form', :locals => {:f => f}
+    %center= f.submit 'Create'

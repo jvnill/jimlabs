@@ -1,0 +1,31 @@
+.field
+  %label URL
+  = f.text_field :url
+
+.field
+  %label Title
+  = f.text_field :title
+
+.field
+  %label Meta Description
+  = f.text_field :meta
+
+.field
+  %label Path
+  = f.text_field :path
+
+.field
+  %label Body
+  = f.text_area :body, :rows => 15, :cols => 70
+
+.field
+  %label Tags
+  = f.text_field :tag_list
+
+.field
+  %label Truncate Length
+  = f.text_field :truncate_length
+
+.field
+  %label= f.check_box :published
+  Publish

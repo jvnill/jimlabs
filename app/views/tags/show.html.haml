@@ -1,0 +1,7 @@
+- if @posts.any?
+  %h1 Posts
+  = render :partial => 'posts/post', :collection => @posts
+
+- if @portfolios.any?
+  %h1 Portfolios
+  = render :partial => 'portfolios/portfolio', :collection => @portfolios

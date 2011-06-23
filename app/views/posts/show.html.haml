@@ -1,0 +1,23 @@
+.post.full
+  %h1
+    = @post.title
+    %small
+      = @post.created_at.to_s(:min)
+      %br 
+      Tags:
+      = tag_links(@post)
+      - if logged_in?
+        %br
+        = link_to 'edit', edit_post_path(@post)
+
+  %div~ markdown @post.body
+
+- @comments.each do |c|
+  .comment
+    .title
+      #{link_to_unless c.url.blank?, c.name, c.url, :target => '_blank'}
+      %small= c.created_at.to_s(:comment)
+    .txt= sanitize c.comment, :tags => %W(strong em p li ul span b i ol br)
+
+
+= render :partial => 'comments/form'

@@ -1,0 +1,13 @@
+.portfolio.nice_border
+  .portfolio_text
+    %h1
+      = link_to portfolio.title, portfolio_path(portfolio.path)
+      %br
+      %small
+        = portfolio.created_at.to_s(:min)
+        %br
+        Tags:
+        = tag_links(portfolio)
+    = link_to image_tag(portfolio.photo_url(:thumb)), portfolio_path(portfolio.path)
+    .portfolio_body~ markdown portfolio.body
+  .clear

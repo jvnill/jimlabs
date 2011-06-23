@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %link{:rel => 'icon', :href => '/favicon.png', :type => 'image/png'}
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}
+
+    = meta_tags
+    %title= page_title
+
+    = csrf_meta_tag
+    = render :partial => "shared/scripts_and_styles"
+
+  %body
+    .wrapper
+      #hd= render :partial => 'shared/header'
+      - if @no_sidebar
+        = yield
+      - else
+        #main
+          #content
+            = render :partial => 'shared/messages'
+            #yield= yield
+        #sidebar= render :partial => 'shared/sidebar'
+    .footer= render :partial => 'shared/footer'

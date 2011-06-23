@@ -1,0 +1,305 @@
+*
+  margin: 0
+  padding: 0
+
+html, body
+  background: black url(/images/bg.png)
+  color: white
+  font-family: 'Trebuchet MS', Tahoma, Arial, Helvetica, sans-serif
+  font-size: 12px
+  height: 100%
+
+body
+  background: transparent url(/images/header_bg.png) repeat-x
+
+textarea
+  font-family: 'Courier New',Courier,monospace
+
+a
+  text-decoration: none
+  color: #326191
+
+  &:hover
+    text-decoration: underline
+
+p
+  margin: 10px 0
+
+ul
+  li
+    list-style-type: disc
+    margin-left: 20px
+
+.wrapper
+  background: transparent url(/images/bg_img.png) no-repeat
+  width: 900px
+  min-height: 100%
+  margin: 0 auto
+
+.clear
+  clear: both
+
+h1
+  font-size: 20px
+  margin-bottom: 20px
+  font-weight: bold
+
+#hd
+  height: 150px
+  font-size: 20px
+  font-family: Tahoma, Arial, Helvetica, sans-serif
+
+  .logo
+    float: right
+    margin-top: 50px
+
+  ul.header
+    float: left
+    font-size: 25px
+    margin-top: 70px
+    height: 50px
+
+    li
+      float: left
+      margin-left: 50px
+      padding: 0 10px
+      list-style-type: none
+
+      a
+        color: #666
+
+      &.current a, &:hover a
+        color: #ccc
+        text-decoration: none
+
+.form
+  h1
+    font-size: 15px
+    font-weight: bold
+    margin-bottom: 20px
+
+  .field
+    clear: both
+    min-height: 20px
+    margin-bottom: 10px
+
+    label
+      float: left
+      min-width: 100px
+      line-height: 25px
+      margin-right: 20px
+
+    textarea
+      font-size: 12px
+
+.portfolio
+  min-height: 200px
+  padding: 20px 30px
+
+  a
+    color: white
+
+    &:hover
+      text-decoration: underline
+
+  &.full
+    border: 0
+
+  .portfolio_text
+    float: left
+
+    img
+      float: right
+      margin-left: 10px
+
+    h1
+      font-size: 20px
+      font-weight: bold
+      margin-bottom: 10px
+
+      small
+        font-size: 11px
+        font-weight: normal
+        display: block
+        color: #326191
+
+        a
+          color: #326191
+
+    .portfolio_body
+      ul
+        li
+          list-style-type: disc
+          margin-left: 20px
+
+  .site_img
+    float: right
+
+.post
+  border: 1px dashed #333
+  padding: 20px 30px
+
+  &.full
+    border: none
+
+  .highlight
+    background: rgba(99, 99, 99, 0.37)
+    padding: 10px
+
+  .no-bg .highlight
+    background: 0
+    padding: 0
+
+  .header
+    background: #e0e0e0
+    border: 1px solid #999
+    border-bottom: 0
+    color: #333
+    padding: 3px
+
+  a
+    color: #326191
+
+  h1
+    font-size: 20px
+    font-weight: bold
+    margin-bottom: 10px
+
+    small
+      font-size: 11px
+      font-weight: normal
+      display: block
+      color: #326191
+
+#main
+  width: 750px
+  float: left
+
+#sidebar
+  min-height: 500px
+  width: 150px
+  float: right
+  
+  .sidebar 
+    padding-left: 10px
+    
+  ul
+    padding-left: 5px
+
+  li
+    list-style-type: disc
+
+  a:hover
+    text-decoration: underline
+
+.height
+  line-height: 20px
+  min-height: 30px
+
+  label
+    float: left
+    min-width: 200px
+    text-align: right
+    margin-right: 10px
+
+.comment
+  border-top: 1px solid #808080
+  font-size: 12px
+  padding: 10px 30px
+
+  .title
+    font-weight: bold
+
+    a
+      color: white
+
+    small
+      color: #808080
+      font-size: 11px
+      font-weight: normal
+
+  .txt
+    margin-top: 10px
+
+.comment_form
+  clear: both
+  border-top: 1px solid #808080
+  padding: 10px 30px
+
+  form
+    width: 330px
+
+    .height label
+      min-width: 60px
+
+    input[type='text'], textarea
+      width: 250px
+      padding: 2px
+
+    input[type='submit']
+      float: right
+
+.tag
+  color: white
+
+*.error
+  input, textarea
+    border-color: red
+
+.contact_form, .comment_form
+  color: white
+
+  p
+    text-align: center
+    padding: 20px 30px
+
+  input, textarea
+    border: 1px dashed #333
+    background-color: transparent
+    color: white
+    padding: 5px
+    border-radius: 5px
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+
+    &:focus
+      border-color: #326191
+
+  .field_with_errors 
+    input, textarea
+      border-color: red
+
+
+*.nice-border
+  margin-bottom: 20px
+  background-color: rgba(51,51,51,0.37)
+  border: 1px dashed #333
+  border-radius: 20px
+  -moz-border-radius: 20px
+  -webkit-border-radius: 20px
+
+.footer
+  background-color: rgba(33,33,33,0.7)
+  padding: 10px 0
+  clear: both
+
+  .footer_text
+    width: 74.923em
+    margin: 0 auto
+    text-align: right
+
+.pagination
+  margin: 40px 0 20px
+  text-align: center
+
+  span.disabled
+    display: none
+
+  a,em
+    padding: 5px
+    border: 1px solid #ccc
+    text-decoration: none
+
+  a:hover,em
+    background-color: #ccc
+    color: #000

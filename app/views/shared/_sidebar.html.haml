@@ -1,0 +1,34 @@
+.sidebar
+  Blog Archives
+  %ul
+    - Post.archive_dates.each do |date, entries|
+      %li= link_to "#{date.to_s} (#{entries.size})", archive_path(date.to_s)
+
+  #flashcontent
+
+  %br
+  Links
+  %ul
+    %li= link_to 'My Github Account', 'http://github.com/jvnill', :target => '_blank'
+    %li= link_to 'Railscasts', 'http://railscasts.com', :target => '_blank'
+    %li= link_to 'Pivotal Tracker', 'http://pivotaltracker.com', :target => '_blank'
+    %li= link_to 'Smashing Magazine', 'http://www.smashingmagazine.com', :target => '_blank'
+
+  %br
+  If you find any of these articles helpful, please
+  = link_to 'recommend me', 'http://workingwithrails.com/recommendation/new/person/18044-jim-ruther-nill'
+  at Working with Rails.
+  %br
+  %br
+  = link_to image_tag('http://workingwithrails.com/images/tools/compact-small.jpg', :alt => 'Recommend Me'), 'http://workingwithrails.com/recommendation/new/person/18044-jim-ruther-nill'
+
+  :javascript
+    var so = new SWFObject("/tagcloud.swf", "tagcloud", "180", "180", "7", "#336699");
+    so.addParam("wmode", "transparent");
+    so.addVariable("mode", "tags");
+    so.addVariable("distr", "true");
+    so.addVariable("tcolor", "0xd2691d");
+    so.addVariable("tcolor2", "0x555555");
+    so.addVariable("hicolor", "0xffffff");
+    so.addVariable("tagcloud", "&lt;tags&gt;#{Post.tag_counts.collect {|tag| "&lt;a href='#{tag_url(tag.name)}' style='#{10 + tag.count*2}'&gt;#{tag.name}&lt;/a&gt;" if tag.count > 1}.compact.join}&lt;/tags&gt;");
+    so.write("flashcontent");
