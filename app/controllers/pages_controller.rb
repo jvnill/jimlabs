@@ -15,10 +15,6 @@ class PagesController < ApplicationController
   def sitemap
     @posts      = Post.published
     @portfolios = Portfolio.published
-
-    respond_to do |format|
-      format.xml
-    end
   end
 
   def page_not_found

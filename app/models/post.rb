@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   before_save :set_path
   
   # NAMED SCOPES
-  named_scope :published, :conditions => {:published => true}, :order => 'created_at desc'
+  scope :published, where(:published => true).order('created_at DESC')
 
   # INSTANCE METHODS
   def to_param

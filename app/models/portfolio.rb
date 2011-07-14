@@ -6,7 +6,7 @@ class Portfolio < ActiveRecord::Base
   validates_presence_of :url, :title, :path, :body
 
   # NAMED SCOPE
-  named_scope :published, :conditions => {:published => true}
+  scope :published, where(:published => true)
 
   # CALLBACKS
   before_validation :set_path
