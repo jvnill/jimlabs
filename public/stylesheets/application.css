@@ -131,6 +131,11 @@ h1 {
     padding: 3px; }
   .post a {
     color: #326191; }
+  .post code {
+    background: #666;
+    font-size: 10px;
+    padding: 2px;
+    border: 1px solid #333; }
   .post h1 {
     font-size: 20px;
     font-weight: bold;
