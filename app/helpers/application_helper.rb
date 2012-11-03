@@ -45,7 +45,7 @@ module ApplicationHelper
     Redcarpet::Markdown.new renderer, autolink: true, no_intra_emphasis: true, fenced_code_blocks: true
   end
 
-  def tag_links(mbj)
+  def tag_links(obj)
     obj.tag_list.collect {|tag| link_to(tag, tag_path(tag), :class => 'tag')}.join(', ').html_safe
   end
 
