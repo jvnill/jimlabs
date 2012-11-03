@@ -1,18 +1,21 @@
 !!! 5
 %html
   %head
-    %link{:rel => 'icon', :href => '/favicon.png', :type => 'image/png'}
-    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}
+    %link{ rel: 'icon', href: '/favicon.png', type: 'image/png' }
+    %meta{ content: 'text/html;charset=UTF-8', 'http-equiv' => 'content-type' }
 
     = meta_tags
     %title= page_title
 
-    = csrf_meta_tag
-    = render :partial => "shared/scripts_and_styles"
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = yield :head
+
+    = csrf_meta_tags
 
   %body
     .wrapper
-      #hd= render :partial => 'shared/header'
+      #hd= render 'shared/header'
       - if @no_sidebar
         = yield
       - else

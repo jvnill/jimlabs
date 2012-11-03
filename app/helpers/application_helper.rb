@@ -31,28 +31,21 @@ module ApplicationHelper
   def form_div(obj, method, options = {}, &block)
     if block_given?
       class_name = options.delete(:class)
-      class_name += ' error' if !obj.errors.on(method).blank?
+      class_name += ' error' unless obj.errors[method].blank?
       content_tag(:div, capture(&block), options.merge(:class => class_name))
     end
   end
 
   def markdown(text)
-    options = [:hard_wrap, :filter_html, :autolink, :no_intraemphasis, :fenced_code, :gh_blockcode]
-    highlight(Redcarpet.new(text, *options).to_html).html_safe
+    markdown_renderer.render(text).html_safe
   end
 
-  def highlight(html)
-    doc = Nokogiri::HTML::DocumentFragment.parse(html)
-    doc.css("pre[@lang]").each do |pre|
-      #pre.replace Albino.colorize(pre.text.rstrip, pre[:lang])
-      header = content_tag :div, pre[:lang], :class => 'header'
-      code = CodeRay.scan(pre.text.rstrip, pre[:lang])
-      pre.replace header + code.html(:wrap => :div).html_safe
-    end
-    doc.to_s
+  def markdown_renderer
+    renderer = CoderayCodeBlocks.new hard_wrap: true, filter_html: true
+    Redcarpet::Markdown.new renderer, autolink: true, no_intra_emphasis: true, fenced_code_blocks: true
   end
 
-  def tag_links(obj)
+  def tag_links(mbj)
     obj.tag_list.collect {|tag| link_to(tag, tag_path(tag), :class => 'tag')}.join(', ').html_safe
   end
 

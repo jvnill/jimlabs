@@ -4,12 +4,11 @@ class PagesController < ApplicationController
   def index
     @section = 'home'
     @meta    = {
-      :keywords => 'Jim Ruther Nill, blog, portfolio, Jimlabs, Ruby on Rails',
-      :description => 'Jimlabs: Jim Ruther Nill\'s Ruby on Rails blog and portfolio'
+      keywords: 'Jim Ruther Nill, blog, portfolio, Jimlabs, Ruby on Rails',
+      description: "Jimlabs: Jim Ruther Nill\'s Ruby on Rails blog and portfolio"
     }
-    @developer = File.read File.join(Rails.root, 'lib', 'frontpage', 'developer.html')
-    @me        = File.read File.join(Rails.root, 'lib', 'frontpage', 'me.html')
-    @skillset  = File.read File.join(Rails.root, 'lib', 'frontpage', 'skillset.html')
+    @me        = File.read Rails.root.join('lib', 'frontpage', 'me.html')
+    @skillset  = File.read Rails.root.join('lib', 'frontpage', 'skillset.html')
   end
 
   def sitemap

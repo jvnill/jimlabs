@@ -1,17 +1,25 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'acts_as_commentable'
 gem 'acts-as-taggable-on'
 gem 'coderay'
-gem 'haml'
+gem 'haml-rails'
+gem 'heroku'
 gem 'jquery-rails'
-gem 'mysql2'
 gem 'nokogiri', '1.4.6'
-gem 'rails', '3.0.3'
+gem 'pg'
+gem 'rails', '3.2.8'
 gem 'redcarpet'
-gem 'will_paginate', '2.3.15'
+gem 'will_paginate'
 
 group :development do
-  gem 'ruby-debug19'
-  gem 'mongrel'
+  gem 'thin'
+  gem 'debugger'
+end
+
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'therubyracer'
+  gem 'uglifier', '>= 1.0.3'
 end

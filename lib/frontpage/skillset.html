@@ -1,33 +1,32 @@
 <div class="CodeRay">
-  <div class="code"><pre><span class="r">module</span> <span class="cl">SkillSet</span>
-  <span class="r">def</span> <span class="pc">self</span>.<span class="fu">skills</span>
+  <div class="code"><pre><span class="keyword">module</span> <span class="class">SkillSet</span>
+  <span class="keyword">def</span> <span class="function">skills</span>
     {
-      <span class="sy">:scaling_and_caching</span> =&gt; <span class="pc">true</span>,
-      <span class="sy">:database_management</span> =&gt; <span class="pc">true</span>,
-      <span class="sy">:data_modeling</span>       =&gt; <span class="pc">true</span>,
-      <span class="sy">:rails</span>               =&gt; [<span class="s"><span class="dl">'</span><span class="k">2.xx</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">3.xx</span><span class="dl">'</span></span>],
-      <span class="sy">:templates</span>           =&gt; [<span class="s"><span class="dl">'</span><span class="k">erb</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">js</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">haml</span><span class="dl">'</span></span>],
-      <span class="sy">:payment_gateways</span>    =&gt; <span class="s"><span class="dl">'</span><span class="k">Active Merchant</span><span class="dl">'</span></span>,
-      <span class="sy">:authentication</span>      =&gt; [<span class="s"><span class="dl">'</span><span class="k">Devise</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">Restful Authentication</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">Omniauth</span><span class="dl">'</span></span>],
-      <span class="sy">:authorization</span>       =&gt; [<span class="s"><span class="dl">'</span><span class="k">CanCan</span><span class="dl">'</span></span>],
-      <span class="sy">:background_jobs</span>     =&gt; [<span class="s"><span class="dl">'</span><span class="k">Delayed Job</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">Resque</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">Rufus Scheduler</span><span class="dl">'</span></span>],
-      <span class="sy">:version_control</span>     =&gt; [<span class="s"><span class="dl">'</span><span class="k">git</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">svn</span><span class="dl">'</span></span>],
-      <span class="sy">:frontend</span>            =&gt; [<span class="s"><span class="dl">'</span><span class="k">css/sass</span><span class="dl">'</span></span>, {<span class="s"><span class="dl">'</span><span class="k">javascript</span><span class="dl">'</span></span> =&gt; <span class="s"><span class="dl">'</span><span class="k">jquery</span><span class="dl">'</span></span>}],
-      <span class="sy">:index_search</span>        =&gt; [{<span class="s"><span class="dl">'</span><span class="k">sphinx</span><span class="dl">'</span></span> =&gt; <span class="s"><span class="dl">'</span><span class="k">thinking_sphinx</span><span class="dl">'</span></span>}],
-      <span class="sy">:geolocation</span>         =&gt; <span class="s"><span class="dl">'</span><span class="k">Geokit</span><span class="dl">'</span></span>,
-      <span class="sy">:workflow_engine</span>     =&gt; <span class="s"><span class="dl">'</span><span class="k">ruote_rest</span><span class="dl">'</span></span>,
-      <span class="sy">:testing</span>             =&gt; [<span class="s"><span class="dl">'</span><span class="k">cucumber</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">capybara</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">rspec</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">steak</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">selenium</span><span class="dl">'</span></span>],
-      <span class="sy">:seo</span>                 =&gt; <span class="pc">true</span>,
-      <span class="sy">:deployment</span>          =&gt; [<span class="s"><span class="dl">'</span><span class="k">Nginx</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">Passenger</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">Apache</span><span class="dl">'</span></span>]}
+      seo:                 <span class="predefined-constant">true</span>,
+      rails:               <span class="string"><span class="delimiter">%w[</span><span class="content">2.xx 3.xx</span><span class="delimiter">]</span></span>,
+      testing:             <span class="string"><span class="delimiter">%w[</span><span class="content">rspec test/unit factory_girl</span><span class="delimiter">]</span></span>,
+      frontend:            <span class="string"><span class="delimiter">%w[</span><span class="content">css sass jquery</span><span class="delimiter">]</span></span>,
+      templates:           <span class="string"><span class="delimiter">%w[</span><span class="content">erb haml</span><span class="delimiter">]</span></span>,
+      deployment:          <span class="string"><span class="delimiter">%w[</span><span class="content">nginx passenger apache</span><span class="delimiter">]</span></span>,
+      geolocation:         <span class="string"><span class="delimiter">%w[</span><span class="content">geokit</span><span class="delimiter">]</span></span>,
+      index_search:        { sphinx: <span class="string"><span class="delimiter">'</span><span class="content">thinking_sphinx</span><span class="delimiter">'</span></span> },
+      data_modeling:       <span class="predefined-constant">true</span>,
+      authorization:       <span class="symbol">:cancan</span>,
+      authentication:      <span class="string"><span class="delimiter">%w[</span><span class="content">devise clearance omniauth</span><span class="delimiter">]</span></span>,
+      background_jobs:     <span class="string"><span class="delimiter">%w[</span><span class="content">delayed_job resque sidekiq</span><span class="delimiter">]</span></span>,
+      version_control:     <span class="symbol">:git</span>,
+      payment_gateways:    <span class="symbol">:active_merchant</span>,
+      scaling_and_caching: <span class="predefined-constant">true</span>,
+      database_management: <span class="predefined-constant">true</span>
     }
-  <span class="r">end</span>
+  <span class="keyword">end</span>
 
-  <span class="r">def</span> <span class="pc">self</span>.<span class="fu">coding_environment</span>
+  <span class="keyword">def</span> <span class="function">coding_environment</span>
     {
-      <span class="s"><span class="dl">'</span><span class="k">OS</span><span class="dl">'</span></span>    =&gt; [<span class="s"><span class="dl">'</span><span class="k">Ubuntu</span><span class="dl">'</span></span>, {<span class="s"><span class="dl">'</span><span class="k">Windows</span><span class="dl">'</span></span> =&gt; <span class="s"><span class="dl">'</span><span class="k">Cygwin</span><span class="dl">'</span></span>}],
-      <span class="sy">:editor</span> =&gt; <span class="s"><span class="dl">'</span><span class="k">vim</span><span class="dl">'</span></span>
+      editor:           <span class="string"><span class="delimiter">'</span><span class="content">vim</span><span class="delimiter">'</span></span>,
+      operating_system: <span class="string"><span class="delimiter">'</span><span class="content">Ubuntu</span><span class="delimiter">'</span></span>
     }
-  <span class="r">end</span>
-<span class="r">end</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
 </pre></div>
 </div>

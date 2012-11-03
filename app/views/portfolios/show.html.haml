@@ -1,14 +1,14 @@
 - content_for :head do
   = javascript_include_tag :defaults
 
-.portfolio.full 
+.portfolio.full
   .portfolio_text
     %h1
       = @portfolio.title
       %br
       %small
         URL:
-        = auto_link @portfolio.url
+        = link_to @portfolio.url, "http://#{@portfolio.url}"
         %br
         Tags:
         = tag_links(@portfolio)
@@ -17,4 +17,3 @@
           = link_to 'edit', edit_portfolio_path
     = image_tag @portfolio.photo_url(:thumb)
     = markdown @portfolio.body
-

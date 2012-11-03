@@ -1,16 +1,18 @@
 <div class="CodeRay">
-  <div class="code"><pre><span class="r">class</span> <span class="cl">Me</span> &lt; <span class="co">Developer</span>
-  <span class="c"># I'm Jim Ruther Nill</span>
-  <span class="c">#   - a full time Ruby on Rails Developer</span>
-  <span class="c">#   - currently staying in Pasig City, Philippines</span>
-  <span class="c">#   - proud husband to a great children's book illustrator</span>
-  include <span class="co">SkillSet</span>
+  <div class="code"><pre><span class="keyword">class</span> <span class="class">Me</span>
+  <span class="comment"># I'm Jim Ruther Nill</span>
+  <span class="comment">#   - a full time Ruby on Rails Developer</span>
+  <span class="comment">#   - currently staying in Pasig City, Philippines</span>
+  <span class="comment">#   - proud husband to a great children's book illustrator</span>
+  <span class="constant">TRAITS</span> = <span class="string"><span class="delimiter">%w[</span><span class="content">reliable trustworthy has_initiative friendly knows_how_to_laugh</span><span class="delimiter">]</span></span>
 
-  belongs_to <span class="sy">:mhs_real_pty_ltd</span>, <span class="sy">:as</span> =&gt; <span class="sy">:current_employer</span>
+  include <span class="constant">Skillset</span>
 
-  <span class="r">def</span> <span class="fu">ruby_on_rails_experience</span>
-    working_with_rails.since <span class="s"><span class="dl">'</span><span class="k">2008-05-01</span><span class="dl">'</span></span>
-  <span class="r">end</span>
-<span class="r">end</span>
+  belongs_to <span class="symbol">:mhs_real_pty_ltd</span>, as: <span class="symbol">:current_employer</span>
+
+  <span class="keyword">def</span> <span class="function">ruby_on_rails_experience</span>
+    working_with_rails.since <span class="string"><span class="delimiter">'</span><span class="content">2008-05-01</span><span class="delimiter">'</span></span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
 </pre></div>
 </div>

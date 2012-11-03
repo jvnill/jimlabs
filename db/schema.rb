@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -18,18 +19,21 @@ ActiveRecord::Schema.define(:version => 20110708032402) do
     t.string   "commentable_type"
     t.string   "name"
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "status",           :default => "pending"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
   end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
 
   create_table "enquiries", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "company"
     t.text     "message"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "portfolios", :force => true do |t|
@@ -39,8 +43,8 @@ ActiveRecord::Schema.define(:version => 20110708032402) do
     t.string   "path"
     t.text     "body"
     t.boolean  "published"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.string   "photo_file_size"
@@ -57,8 +61,8 @@ ActiveRecord::Schema.define(:version => 20110708032402) do
     t.string   "path"
     t.string   "meta"
     t.boolean  "published"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "cached_tag_list"
     t.integer  "truncate_length", :default => 80
   end
@@ -84,8 +88,8 @@ ActiveRecord::Schema.define(:version => 20110708032402) do
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

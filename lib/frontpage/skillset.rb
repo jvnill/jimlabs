@@ -1,30 +1,29 @@
 module SkillSet
-  def self.skills
+  def skills
     {
-      :scaling_and_caching => true,
-      :database_management => true,
-      :data_modeling       => true,
-      :rails               => ['2.xx', '3.xx'],
-      :templates           => ['erb', 'js', 'haml'],
-      :payment_gateways    => 'Active Merchant',
-      :authentication      => ['Devise', 'Restful Authentication', 'Omniauth'],
-      :authorization       => ['CanCan'],
-      :background_jobs     => ['Delayed Job', 'Resque', 'Rufus Scheduler'],
-      :version_control     => ['git', 'svn'],
-      :frontend            => ['css/sass', {'javascript' => 'jquery'}],
-      :index_search        => [{'sphinx' => 'thinking_sphinx'}],
-      :geolocation         => 'Geokit',
-      :workflow_engine     => 'ruote_rest',
-      :testing             => ['cucumber', 'capybara', 'rspec', 'steak', 'selenium'],
-      :seo                 => true,
-      :deployment          => ['Nginx', 'Passenger', 'Apache']
+      seo:                 true,
+      rails:               %w[2.xx 3.xx],
+      testing:             %w[rspec test/unit factory_girl],
+      frontend:            %w[css sass jquery],
+      templates:           %w[erb haml],
+      deployment:          %w[nginx passenger apache],
+      geolocation:         %w[geokit],
+      index_search:        { sphinx: 'thinking_sphinx' },
+      data_modeling:       true,
+      authorization:       :cancan,
+      authentication:      %w[devise clearance omniauth],
+      background_jobs:     %w[delayed_job resque sidekiq],
+      version_control:     :git,
+      payment_gateways:    :active_merchant,
+      scaling_and_caching: true,
+      database_management: true
     }
   end
 
-  def self.coding_environment
+  def coding_environment
     {
-      'OS'    => ['Ubuntu', {'Windows' => 'Cygwin'}],
-      :editor => 'vim'
+      editor:           'vim',
+      operating_system: 'Ubuntu'
     }
   end
 end
