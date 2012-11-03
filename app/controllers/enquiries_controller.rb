@@ -10,10 +10,8 @@ class EnquiriesController < ApplicationController
     @enquiry = Enquiry.new params[:enquiry]
 
     if @enquiry.save
-      @enquiry = Enquiry.new
       Notifier.contact_us(@enquiry).deliver
-      flash.now[:notice] = "Thank you for your enquiry!!"
-      render :new
+      redirect_to '/contact', notice: 'Thank you for your enquiry!!'
     else
       render :new
     end
