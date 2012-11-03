@@ -1,6 +1,4 @@
 Enquiry Details:
 - @enquiry.attributes.each do |k, v|
-  %b
-    = k.humanize
-    :
+  %strong= "#{k.humanize}:"
   = v

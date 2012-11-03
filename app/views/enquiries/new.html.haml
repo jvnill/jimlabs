@@ -1,15 +1,13 @@
 .contact_form
-  %p.nice_border
-    If you have any inquiries,
-    %br
-    just fill up the form below and
-    %br
-    I'll get back to you as soon as I can
+  %p.nice_border If you have any inquiries, just fill up the form below and I'll get back to you as soon as I can
 
   = form_for @enquiry do |f|
     - if @enquiry.errors.any?
       .height
         %center Please correct the fields in red.
+
+    - if flash[:notice]
+      %p= flash[:notice].html_safe
 
     = form_div @enquiry, :name, :class => 'height' do
       %label Name

@@ -10,10 +10,12 @@ class EnquiriesController < ApplicationController
     @enquiry = Enquiry.new params[:enquiry]
 
     if @enquiry.save
-      Notifier.deliver_contact_us(@enquiry)
-      render :text => '<center style="margin-top:110px;font-size:15px"> I\'ll get back to you as soon as I can.<br><br>Thank you!</center>', :layout => true
+      @enquiry = Enquiry.new
+      Notifier.contact_us(@enquiry).deliver
+      flash.now[:notice] = "Thank you for your enquiry!!"
+      render :new
     else
-      render :action => :new
+      render :new
     end
   end
 

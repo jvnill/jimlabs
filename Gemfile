@@ -15,6 +15,7 @@ gem 'will_paginate'
 group :development do
   gem 'thin'
   gem 'debugger'
+  gem 'mailcatcher'
 end
 
 group :assets do
