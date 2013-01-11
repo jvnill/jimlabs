@@ -9,7 +9,7 @@ Jimlabs3::Application.routes.draw do
   match '/blog/:id/rss/feed' => 'posts#show', :constraints => {:format => 'rss'}
 
   root :to => "pages#index"
-  resource :session 
+  resource :session
 
   match '/contact'           => "enquiries#new",    :as => :contact
   match '/admin'             => "sessions#new",     :as => :admin

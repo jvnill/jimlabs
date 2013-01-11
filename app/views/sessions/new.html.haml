@@ -1,9 +1,11 @@
-- form_tag session_path, :method => :post do
+= form_tag session_path, method: :post do
   %table
     %tr
       %td Email:
       %td= text_field_tag :email
+
     %tr
       %td Password:
       %td= password_field_tag :password
+
   = submit_tag 'Login'
