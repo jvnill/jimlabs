@@ -8,7 +8,7 @@ gem 'heroku'
 gem 'jquery-rails'
 gem 'nokogiri', '1.4.6'
 gem 'pg'
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 gem 'redcarpet'
 gem 'will_paginate'
 

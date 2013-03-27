@@ -2,6 +2,9 @@ class Post < ActiveRecord::Base
   acts_as_taggable_on :tags
   acts_as_commentable
 
+  attr_accessible :title, :meta, :path, :tag_list, :truncate_length,
+                  :published, :body
+
   # VALIDATIONS
   validates_presence_of :title, :body
 
