@@ -8,13 +8,13 @@ gem 'heroku'
 gem 'jquery-rails'
 gem 'nokogiri', '1.4.6'
 gem 'pg'
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.16'
 gem 'redcarpet'
 gem 'will_paginate'
 
 group :development do
   gem 'thin'
-  gem 'debugger'
+  gem 'pry'
   gem 'mailcatcher'
 end
 
