@@ -2,20 +2,18 @@
   <div class="code"><pre><span class="keyword">module</span> <span class="class">SkillSet</span>
   <span class="keyword">def</span> <span class="function">skills</span>
     {
-      seo:                 <span class="predefined-constant">true</span>,
-      rails:               <span class="string"><span class="delimiter">%w[</span><span class="content">2.xx 3.xx</span><span class="delimiter">]</span></span>,
-      testing:             <span class="string"><span class="delimiter">%w[</span><span class="content">rspec test/unit factory_girl</span><span class="delimiter">]</span></span>,
+      rails:               <span class="string"><span class="delimiter">%w[</span><span class="content">2.xx 3.xx 4.xx</span><span class="delimiter">]</span></span>,
+      testing:             <span class="string"><span class="delimiter">%w[</span><span class="content">rspec capybara factory_girl</span><span class="delimiter">]</span></span>,
       frontend:            <span class="string"><span class="delimiter">%w[</span><span class="content">css sass jquery</span><span class="delimiter">]</span></span>,
       templates:           <span class="string"><span class="delimiter">%w[</span><span class="content">erb haml</span><span class="delimiter">]</span></span>,
-      deployment:          <span class="string"><span class="delimiter">%w[</span><span class="content">nginx passenger apache</span><span class="delimiter">]</span></span>,
-      geolocation:         <span class="string"><span class="delimiter">%w[</span><span class="content">geokit</span><span class="delimiter">]</span></span>,
+      deployment:          <span class="string"><span class="delimiter">%w[</span><span class="content">nginx passenger apache capistrano aws</span><span class="delimiter">]</span></span>,
       index_search:        { sphinx: <span class="string"><span class="delimiter">'</span><span class="content">thinking_sphinx</span><span class="delimiter">'</span></span> },
       data_modeling:       <span class="predefined-constant">true</span>,
       authorization:       <span class="symbol">:cancan</span>,
       authentication:      <span class="string"><span class="delimiter">%w[</span><span class="content">devise clearance omniauth</span><span class="delimiter">]</span></span>,
       background_jobs:     <span class="string"><span class="delimiter">%w[</span><span class="content">delayed_job resque sidekiq</span><span class="delimiter">]</span></span>,
       version_control:     <span class="symbol">:git</span>,
-      payment_gateways:    <span class="symbol">:active_merchant</span>,
+      payment_gateways:    <span class="string"><span class="delimiter">%w[</span><span class="content">active_merchant braintree</span><span class="delimiter">]</span></span>,
       scaling_and_caching: <span class="predefined-constant">true</span>,
       database_management: <span class="predefined-constant">true</span>
     }

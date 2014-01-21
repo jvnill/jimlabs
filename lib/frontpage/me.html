@@ -1,17 +1,25 @@
 <div class="CodeRay">
   <div class="code"><pre><span class="keyword">class</span> <span class="class">Me</span>
-  <span class="comment"># I'm Jim Ruther Nill</span>
-  <span class="comment">#   - a full time Ruby on Rails Developer</span>
-  <span class="comment">#   - currently staying in Pasig City, Philippines</span>
-  <span class="comment">#   - proud husband to a great children's book illustrator</span>
-  <span class="constant">TRAITS</span> = <span class="string"><span class="delimiter">%w[</span><span class="content">reliable trustworthy has_initiative friendly knows_how_to_laugh</span><span class="delimiter">]</span></span>
-
   include <span class="constant">Skillset</span>
 
-  belongs_to <span class="symbol">:mhs_real_pty_ltd</span>, as: <span class="symbol">:current_employer</span>
+  <span class="keyword">def</span> <span class="function">name</span>
+    'Jim Ruther Nill'
+  <span class="keyword">end</span>
 
-  <span class="keyword">def</span> <span class="function">ruby_on_rails_experience</span>
-    working_with_rails.since <span class="string"><span class="delimiter">'</span><span class="content">2008-05-01</span><span class="delimiter">'</span></span>
+  <span class="keyword">def</span> <span class="function">profile</span>
+    &lt;&lt;-<span class="keyword">EOF</span>
+      - a full time Ruby on Rails Developer
+      - currently staying in Pasig City, Philippines
+      - proud husband to a great children's book illustrator
+    <span class="keyword">EOF</span>
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">current_employer</span>
+    'NetEngine <a href="http://netengine.com.au">netengine.com.au</a>'
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">experience</span>
+    'working with rails since 2008-05-01'
   <span class="keyword">end</span>
 <span class="keyword">end</span>
 </pre></div>
