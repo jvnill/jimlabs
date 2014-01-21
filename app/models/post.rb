@@ -25,7 +25,7 @@ class Post < ActiveRecord::Base
 
   # CLASS METHODS
   def self.archive_dates
-    Post.published.group_by {|p| "#{Date::MONTHNAMES[p.created_at.month]} #{p.created_at.year}"}
+    Post.published.group_by {|p| "#{Date::ABBR_MONTHNAMES[p.created_at.month]} #{p.created_at.year}"}
   end
 
   def self.meta_tags
