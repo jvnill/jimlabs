@@ -18,6 +18,7 @@ group :development do
   gem 'thin'
   gem 'pry'
   gem 'mailcatcher'
+  gem 'spring'
 end
 
 group :assets do

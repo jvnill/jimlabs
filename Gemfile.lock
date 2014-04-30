@@ -139,6 +139,7 @@ GEM
       eventmachine (~> 1.0.0)
       thin (~> 1.5.0)
     slop (3.4.7)
+    spring (1.1.2)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -180,6 +181,7 @@ DEPENDENCIES
   rails (= 3.2.17)
   redcarpet
   sass-rails (~> 3.2.3)
+  spring
   therubyracer
   thin
   uglifier (>= 1.0.3)
