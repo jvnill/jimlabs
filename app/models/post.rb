@@ -10,9 +10,15 @@ class Post < ActiveRecord::Base
 
   # CALLBACKS
   before_save :set_path
-  
+
   # NAMED SCOPES
   scope :published, where(:published => true).order('created_at DESC')
+
+  def self.for_date(date)
+    return scoped if date.blank?
+
+    where("DATE_PART('YEAR', created_at) = ? AND DATE_PART('MONTH', created_at) = ?", date.year, date.month)
+  end
 
   # INSTANCE METHODS
   def to_param
