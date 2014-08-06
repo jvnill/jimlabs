@@ -12,10 +12,10 @@ gem 'nokogiri', '1.4.6'
 gem 'pg'
 gem 'rails', '3.2.18'
 gem 'redcarpet'
+gem 'thin'
 gem 'will_paginate'
 
 group :development do
-  gem 'thin'
   gem 'pry'
   gem 'mailcatcher'
   gem 'spring'
