@@ -1,1 +1,8 @@
-= render :partial => 'portfolio', :collection => @portfolios
+.portfolio-gallery
+  - @portfolios.each do |portfolio|
+    .box
+      .image-container{ style: "background-image:url(#{portfolio.photo_url})" }
+
+      .caption
+        .content
+          %h3= portfolio.title
