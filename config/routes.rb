@@ -6,8 +6,9 @@ Jimlabs3::Application.routes.draw do
   resources :enquiries, only: [:index, :new, :create, :destroy]
   resources :posts
   resources :comments, only: [:create, :index, :update]
+  resources :portfolios, only: [:new, :create, :edit, :update, :destroy]
 
-  match '/portfolio'         => 'portfolios#index', as: :portfolio
+  match '/portfolio'         => 'portfolios#index', as: :portfolio_index
   match '/contact'           => 'enquiries#new',    as: :contact
   match '/admin'             => 'sessions#new',     as: :admin
   match '/logout'            => 'sessions#destroy', as: :logout

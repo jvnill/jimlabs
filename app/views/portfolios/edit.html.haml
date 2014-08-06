@@ -1,5 +1,1 @@
-.form
-  - form_for @portfolio, :html => {:multipart => true} do |f|
-    = f.error_messages
-    = render :partial => 'form', :locals => {:f => f}
-    = f.submit 'Save'
+.form= render 'form'

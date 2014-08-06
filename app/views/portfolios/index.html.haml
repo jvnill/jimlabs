@@ -1,8 +1,18 @@
 .portfolio-gallery
   - @portfolios.each do |portfolio|
     .box
-      .image-container{ style: "background-image:url(#{portfolio.photo_url})" }
+      .image-container{ style: "background-image:url(#{portfolio.image_url})" }
 
       .caption
         .content
-          %h3= portfolio.title
+          - if portfolio.active_site?
+            %h3= link_to portfolio.title, portfolio.url
+
+          - else
+            %h3= portfolio.title
+            %small.red Inactive site
+
+          - if logged_in?
+            %small= link_to 'Edit', [:edit, portfolio]
+
+          %small= portfolio.short_description

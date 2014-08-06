@@ -1,31 +1,27 @@
-.field
-  %label URL
-  = f.text_field :url
+= form_for @portfolio do |f|
+  .field
+    %label Title
+    = f.text_field :title
 
-.field
-  %label Title
-  = f.text_field :title
+  .field
+    %label Site URL
+    = f.text_field :url
 
-.field
-  %label Meta Description
-  = f.text_field :meta
+  .field
+    %label Active Site
+    = f.check_box :active_site
 
-.field
-  %label Path
-  = f.text_field :path
+  .field
+    %label Image URL
+    = f.text_field :image_url
 
-.field
-  %label Body
-  = f.text_area :body, :rows => 15, :cols => 70
+  .field
+    %label Description
+    = f.text_field :short_description
 
-.field
-  %label Tags
-  = f.text_field :tag_list
+  .field
+    %label Body
+    = f.text_area :body, rows: 15, cols: 70
 
-.field
-  %label Truncate Length
-  = f.text_field :truncate_length
-
-.field
-  %label= f.check_box :published
-  Publish
+  .field
+    = f.submit

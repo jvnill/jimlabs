@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110708032402) do
+ActiveRecord::Schema.define(:version => 20140806184720) do
 
   create_table "comments", :force => true do |t|
     t.string   "comment"
@@ -19,40 +19,29 @@ ActiveRecord::Schema.define(:version => 20110708032402) do
     t.string   "commentable_type"
     t.string   "name"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "status",           :default => "pending"
-    t.datetime "created_at",                              :null => false
-    t.datetime "updated_at",                              :null => false
   end
-
-  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
-  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
 
   create_table "enquiries", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "company"
     t.text     "message"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "portfolios", :force => true do |t|
-    t.string   "url"
     t.string   "title"
-    t.string   "meta"
-    t.string   "path"
     t.text     "body"
-    t.boolean  "published"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.string   "photo_file_size"
-    t.integer  "width"
-    t.integer  "height"
-    t.datetime "photo_updated_at"
-    t.string   "cached_tag_list"
-    t.integer  "truncate_length",    :default => 80
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url"
+    t.string   "image_url"
+    t.string   "short_description"
+    t.boolean  "active_site",       :default => true
   end
 
   create_table "posts", :force => true do |t|
@@ -61,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20110708032402) do
     t.string   "path"
     t.string   "meta"
     t.boolean  "published"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "cached_tag_list"
     t.integer  "truncate_length", :default => 80
   end
@@ -88,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20110708032402) do
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
