@@ -16,16 +16,19 @@ module ApplicationHelper
 
   def meta_tags
     default = {}
-    default[:keywords] = ['Jim Ruther Nill', 'Jimlabs', 'Ruby on Rails'].join(', ')
-    default[:description] = ["Jimlabs: Jim Ruther Nill's Ruby on Rails blog and portfolio"].join(', ')
+    default[:keywords] = ['Jim Ruther Nill', 'Jimlabs', 'Ruby on Rails']
+    default[:description] = ["Jimlabs: Jim Ruther Nill's Ruby on Rails blog and portfolio"]
 
     meta = @meta || {}
-    tags = {:title => page_title}
+    tags = { title: page_title }
 
     tags[:author]      = 'Jim Ruther Nill'
-    tags[:keywords]    = ([meta[:keywords]] << default[:keywords]).flatten.compact.join(', ')
-    tags[:description] = ([meta[:description]] << default[:description]).flatten.compact.join('. ')
-    tags.collect {|name, content| "<meta name=\"#{name}\" content=\"#{content}\"/>"}.join.html_safe
+    tags[:keywords]    = (Array(meta[:keywords]) + default[:keywords]).uniq.join(', ')
+    tags[:description] = (Array(meta[:description]) + default[:description]).uniq.join('. ')
+
+    tags.map do |name, content|
+      content_tag(:meta, '', name: name, content: content)
+    end.join.html_safe
   end
 
   def form_div(obj, method, options = {}, &block)
