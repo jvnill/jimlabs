@@ -19,5 +19,9 @@ class PagesController < ApplicationController
   def page_not_found
     @page_title = '404: Page Not Found'
     @no_sidebar = true
+
+    respond_to do |format|
+      format.html
+    end
   end
 end
