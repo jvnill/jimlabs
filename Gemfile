@@ -1,3 +1,5 @@
+ruby '2.1.2'
+
 source 'https://rubygems.org'
 
 gem 'acts_as_commentable'
@@ -8,7 +10,7 @@ gem 'heroku'
 gem 'jquery-rails'
 gem 'nokogiri', '1.4.6'
 gem 'pg'
-gem 'rails', '3.2.17'
+gem 'rails', '3.2.18'
 gem 'redcarpet'
 gem 'will_paginate'
 
