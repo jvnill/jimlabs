@@ -35,10 +35,10 @@ class Post < ActiveRecord::Base
   end
 
   def self.meta_tags
-    published.collect(&:tag_list).flatten.uniq.join(',')
+    published.map(&:tag_list)
   end
 
   def self.meta_desc
-    published.collect(&:title).flatten.join(',')
+    published.map(&:title)
   end
 end
