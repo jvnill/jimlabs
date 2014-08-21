@@ -1,13 +1,14 @@
 class EnquiriesController < ApplicationController
-  before_filter :set_section
-  skip_before_filter :login_required, :only => [:new, :create]
+  before_action :set_section
+
+  skip_before_action :login_required, only: [:new, :create]
 
   def new
     @enquiry = Enquiry.new
   end
 
   def create
-    @enquiry = Enquiry.new params[:enquiry]
+    @enquiry = Enquiry.new(enquiry_params)
 
     if @enquiry.save
       Notifier.contact_us(@enquiry).deliver
@@ -17,11 +18,13 @@ class EnquiriesController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
+
   def set_section
     @section = 'contactus'
+  end
+
+  def enquiry_params
+    params.require(:enquiry).permit(:message, :name, :email, :company)
   end
 end

@@ -8,15 +8,16 @@ Jimlabs3::Application.routes.draw do
   resources :comments, only: [:create, :index, :update]
   resources :portfolios, only: [:new, :create, :edit, :update, :destroy]
 
-  match '/portfolio'         => 'portfolios#index', as: :portfolio_index
-  match '/contact'           => 'enquiries#new',    as: :contact
-  match '/admin'             => 'sessions#new',     as: :admin
-  match '/logout'            => 'sessions#destroy', as: :logout
-  match '/tags/:tag_name'    => 'tags#show',        as: :tag
-  match '/archives/:date'    => 'archives#show',    as: :archive
-  match '/sitemap(.:format)' => 'pages#sitemap',    as: :sitemap, defaults: { format: :xml }
+  get '/portfolio'         => 'portfolios#index', as: :portfolio_index
+  get '/contact'           => 'enquiries#new',    as: :contact
+  get '/admin'             => 'sessions#new',     as: :admin
+  get '/tags/:tag_name'    => 'tags#show',        as: :tag
+  get '/archives/:date'    => 'archives#show',    as: :archive
+  get '/sitemap(.:format)' => 'pages#sitemap',    as: :sitemap, defaults: { format: :xml }
+  get '/blog/rss/feed'     => 'posts#index', constraints: { format: 'rss' }
+  get '/blog/:id/rss/feed' => 'posts#show',  constraints: { format: 'rss' }
 
-  match '/blog/rss/feed'     => 'posts#index', constraints: { format: 'rss' }
-  match '/blog/:id/rss/feed' => 'posts#show',  constraints: { format: 'rss' }
-  match '*url'               => 'pages#page_not_found'
+  delete '/logout'         => 'sessions#destroy', as: :logout
+
+  get '*url'               => 'pages#page_not_found'
 end

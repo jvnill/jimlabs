@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   validates_presence_of :email, :crypted_password, :salt
-  attr_accessible :email, :password
+
   attr_accessor :password
 
   before_validation :encrypt_password
