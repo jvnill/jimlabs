@@ -6,24 +6,20 @@ class Post < ActiveRecord::Base
 
   before_save :set_path
 
-  scope :published, -> { where(published: true).order('created_at DESC') }
+  scope :published, -> { where(published: true) }
 
-  def self.for_date(date)
-    return scoped if date.blank?
+  def self.for_year(year)
+    return all if year.blank?
 
-    where("DATE_PART('YEAR', created_at) = ? AND DATE_PART('MONTH', created_at) = ?", date.year, date.month)
+    where('DATE_PART(\'YEAR\', created_at) = ?', year)
   end
 
-  def to_param
-    path
-  end
-
-  def set_path
-    self.path = title.downcase.gsub(/[^A-Za-z0-9]+/, '-') if path.blank?
-  end
-
-  def self.archive_dates
-    Post.published.group_by {|p| "#{Date::ABBR_MONTHNAMES[p.created_at.month]} #{p.created_at.year}"}
+  def self.count_by_year
+    Post
+      .published
+      .group('DATE_PART(\'YEAR\', posts.created_at)')
+      .order('date_part_year_posts_created_at DESC')
+      .count(:id)
   end
 
   def self.meta_tags
@@ -32,5 +28,13 @@ class Post < ActiveRecord::Base
 
   def self.meta_desc
     published.map(&:title)
+  end
+
+  def to_param
+    path
+  end
+
+  def set_path
+    self.path = title.downcase.gsub(/[^A-Za-z0-9]+/, '-') if path.blank?
   end
 end

@@ -16,12 +16,15 @@
   %body
     .wrapper
       #hd= render 'shared/header'
+
       - if @no_sidebar
         = yield
+
       - else
         #main
           #content
-            = render :partial => 'shared/messages'
             #yield= yield
-        #sidebar= render :partial => 'shared/sidebar'
-    .footer= render :partial => 'shared/footer'
+
+        #sidebar= render 'shared/sidebar'
+
+    .footer= render 'shared/footer'

@@ -1,11 +1,18 @@
 class PostsController < ApplicationController
-  before_filter :set_section
+  skip_before_action :login_required, only: [:show, :index]
 
-  skip_before_filter :login_required, only: [:show, :index]
+  before_action :fetch_post, only: [:show, :edit, :update]
+  before_action :set_section
 
   def index
-    @posts = Post.published.paginate(page: params[:page], per_page: 5)
     @meta  = { keywords: Post.meta_tags, description: Post.meta_desc }
+
+    @posts = Post
+      .published
+      .page(params[:page])
+      .per_page(5)
+      .for_year(params[:year])
+      .order('created_at DESC')
   end
 
   def new
@@ -13,41 +20,43 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
 
     if @post.save
       redirect_to post_path(@post)
     else
-      render :action => :new
+      render :new
     end
   end
 
   def show
-    @post       = Post.where(:path => params[:id]).first
     @page_title = @post.title
     @meta       = { keywords: @post.tag_list, description: Array(@post.meta) }
-    @comment    = Comment.new :commentable_id => @post.id, :commentable_type => 'Post'
+    @comment    = Comment.new(commentable_id: @post.id, commentable_type: 'Post')
     @comments   = @post.comments.approved
   end
 
-  def edit
-    @post = Post.where(:path => params[:id]).first
-  end
-
   def update
-    @post = Post.where(:path => params[:id]).first
-
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(post_params)
       redirect_to post_path(@post)
     else
-      render :action => :edit
+      render :edit
     end
   end
 
-  def destroy
-  end
+  private
 
   def set_section
     @section = 'blog'
+  end
+
+  def post_params
+    params
+      .require(:post)
+      .permite(:title, :body, :path, :meta, :published, :truncate_length)
+  end
+
+  def fetch_post
+    @post = Post.find_by!(path: params[:id])
   end
 end
