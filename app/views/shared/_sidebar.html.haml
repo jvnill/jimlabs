@@ -6,14 +6,16 @@
 
   #flashcontent
 
-  = link_to 'http://stackoverflow.com/users/337166/jvnill' do
+  -#= link_to 'http://stackoverflow.com/users/337166/jvnill' do
     = image_tag 'http://stackoverflow.com/users/flair/337166.png?theme=dark', width: 208, height: 58, alt: 'profile for jvnill at Stack Overflow, Q&A for professional and enthusiast programmers', title: 'profile for jvnill at Stack Overflow, Q&A for professional and enthusiast programmers'
 
-  %li= link_to 'Github', 'http://github.com/jvnill', class: 'icon icon-only icon-github', target: '_blank'
-  %li= link_to 'LinkedIn', 'http://au.linkedin.com/pub/jim-ruther-nill/38/62a/ab4', class: 'icon icon-only icon-linkedin', target: '_blank'
-  %li= link_to 'Twitter', 'https://twitter.com/jvnill', class: 'icon icon-only icon-twitter', target: '_blank'
-  %li= link_to 'Facebook', 'https://www.facebook.com/jim.nill', class: 'icon icon-only icon-facebook', target: '_blank'
-  %li= link_to 'Skype', 'skype:jimboker?call', class: 'icon icon-only icon-skype'
+  %ul.links
+    %li= link_to 'Github', 'http://github.com/jvnill', class: 'icon icon-only icon-github', target: '_blank'
+    %li= link_to 'LinkedIn', 'http://au.linkedin.com/pub/jim-ruther-nill/38/62a/ab4', class: 'icon icon-only icon-linkedin', target: '_blank'
+    %li= link_to 'Twitter', 'https://twitter.com/jvnill', class: 'icon icon-only icon-twitter', target: '_blank'
+    %li= link_to 'Facebook', 'https://www.facebook.com/jim.nill', class: 'icon icon-only icon-facebook', target: '_blank'
+    %li= link_to 'Skype', 'skype:jimboker?call', class: 'icon icon-only icon-skype'
+    %li= link_to 'Stack Overflow', 'http://stackoverflow.com/users/337166/jvnill', class: 'icon icon-only icon-stackoverflow', target: '_blank'
 
   :javascript
     var so = new SWFObject("/tagcloud.swf", "tagcloud", "180", "180", "7", "#336699");

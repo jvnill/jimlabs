@@ -19,9 +19,6 @@ a
   text-decoration: none
   color: #326191
 
-  &:hover
-    text-decoration: underline
-
 p
   margin: 20px 0
   letter-spacing: 0.5px
@@ -192,18 +189,26 @@ h1
   min-height: 500px
   width: 150px
   float: right
-  
-  .sidebar 
+
+  .sidebar
     padding-left: 10px
-    
+
   ul
     padding-left: 5px
 
   li
     list-style-type: disc
 
-  a:hover
-    text-decoration: underline
+  ul.links
+    li
+      float: left
+      list-style-type: none
+      margin: 0 0 3px
+      padding: 0
+      width: 50%
+
+    a
+      border-radius: 100px
 
 .height
   line-height: 20px
@@ -282,7 +287,6 @@ h1
     input, textarea
       border-color: red
 
-
 *.nice-border
   margin-bottom: 20px
   background-color: rgba(51,51,51,0.37)
@@ -308,11 +312,38 @@ h1
   span.disabled
     display: none
 
-  a,em
+  a, em
     padding: 5px
     border: 1px solid #ccc
     text-decoration: none
 
-  a:hover,em
+  a:hover, em
     background-color: #ccc
     color: #000
+
+.icon
+  background-image: image-url('icon-sprite.png')
+  height: 64px
+  width: 64px
+  display: block
+
+  &.icon-only
+    color: transparent
+
+  &.icon-github
+    background-position: 0 -74px
+
+  &.icon-linkedin
+    background-position: -740px -148px
+
+  &.icon-twitter
+    background-position: -888px -148px
+
+  &.icon-facebook
+    background-position: -74px 0
+
+  &.icon-skype
+    background-position: -814px -148px
+
+  &.icon-stackoverflow
+    background-position: -296px -370px
