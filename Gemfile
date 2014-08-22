@@ -21,3 +21,10 @@ group :development do
   gem 'mailcatcher'
   gem 'spring'
 end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end
