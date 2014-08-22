@@ -9,7 +9,7 @@
 
   %div~ markdown @post.body
 
-- @comments.each do |c|
+-# @comments.each do |c|
   .comment
     .title
       = link_to_unless c.url.blank?, c.name, c.url, target: '_blank'

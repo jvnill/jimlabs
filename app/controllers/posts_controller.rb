@@ -31,7 +31,6 @@ class PostsController < ApplicationController
   def show
     @page_title = @post.title
     @meta       = { keywords: @post.tag_list, description: Array(@post.meta) }
-    @comments   = @post.comments.approved
   end
 
   def update
