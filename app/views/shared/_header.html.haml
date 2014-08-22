@@ -1,11 +1,19 @@
-%ul.header
-  = tabbed_link_to 'me', root_path, 'home'
-  = tabbed_link_to 'blog', posts_path, 'blog'
-  = tabbed_link_to 'portfolio', portfolio_index_path, 'portfolio'
-  = tabbed_link_to 'contact', contact_path, 'contactus'
+.header{ data: { magellan_expedition: 'fixed' } }
+  .row
+    .small-3.columns &nbsp;
 
-.logo
-  = image_tag 'logo.png'
+    .small-18.columns
+      %dl.sub-nav
+        .left
+          %dd
+            = image_tag 'logo.png', alt: 'Jimlabs'
+            %h1{ style: 'text-align:center; font-size:12px; margin-top:5px;'}
+              Jim Ruther Nill's blog and portfolio
 
-  %h1{ style: 'text-align:center; font-size:12px; margin-top:5px;'}
-    Jim Ruther Nill's blog and portfolio
+        .right
+          %dd= tabbed_link_to 'me', root_path, 'home'
+          %dd= tabbed_link_to 'blog', posts_path, 'blog'
+          %dd= tabbed_link_to 'portfolio', portfolio_index_path, 'portfolio'
+          %dd= tabbed_link_to 'contact', contact_path, 'contactus'
+
+    .small-3.columns &nbsp;

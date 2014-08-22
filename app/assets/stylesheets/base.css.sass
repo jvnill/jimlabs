@@ -3,347 +3,350 @@
   padding: 0
 
 html, body
-  background: black url(/assets/bg.png)
+  background: #000
   color: white
   font-family: 'Trebuchet MS', Tahoma, Arial, Helvetica, sans-serif
-  font-size: 18px
-  height: 100%
+  font-size: 1em
 
-body
-  background: transparent url(/assets/header_bg.png) repeat-x
-
-textarea
-  font-family: 'Courier New',Courier,monospace
-
-a
-  text-decoration: none
-  color: #326191
-
-p
-  margin: 20px 0
-  letter-spacing: 0.5px
-
-blockquote
-  background: #666
-  padding: 20px
-  border: #333
-
-ul
-  li
-    list-style-type: disc
-    margin-left: 20px
-
-.wrapper
-  background: transparent url(/assets/bg_img.png) no-repeat
-  width: 900px
-  min-height: 100%
-  margin: 0 auto
-
-.clear
-  clear: both
-
-h1
-  font-size: 20px
-  margin-bottom: 20px
-  font-weight: bold
-
-#hd
-  height: 150px
-  font-size: 20px
-  font-family: Tahoma, Arial, Helvetica, sans-serif
-
-  .logo
-    float: right
-    margin-top: 50px
-
-  ul.header
-    float: left
-    font-size: 25px
-    margin-top: 70px
-    height: 50px
-
-    li
-      float: left
-      margin-left: 50px
-      padding: 0 10px
-      list-style-type: none
-
-      a
-        color: #666
-
-      &.current a, &:hover a
-        color: #ccc
-        text-decoration: none
-
-.form
+.header
   h1
-    font-size: 15px
-    font-weight: bold
-    margin-bottom: 20px
+    margin: 0
 
-  .field
-    clear: both
-    min-height: 20px
-    margin-bottom: 10px
+//body
+//  background: transparent url(/assets/header_bg.png) repeat-x
 
-    label
-      float: left
-      min-width: 100px
-      line-height: 25px
-      margin-right: 20px
+//textarea
+//  font-family: 'Courier New',Courier,monospace
 
-    textarea
-      font-size: 12px
+//a
+//  text-decoration: none
+//  color: #326191
 
-.portfolio-gallery
-  .image-container
-    width: 100%
-    height: 100%
-    background-repeat: no-repeat
-    background-size: cover
-    background-position: center 0
+//p
+//  margin: 20px 0
+//  letter-spacing: 0.5px
 
-  .box
-    cursor: pointer
-    height: 180px
-    float: left
-    margin: 10px 1.5%
-    position: relative
-    overflow: hidden
-    width: 30%
-    text-align: center
+//blockquote
+//  background: #666
+//  padding: 20px
+//  border: #333
 
-    .caption
-      background-color: rgba(0,0,0,0.8)
-      position: absolute
-      color: #fff
-      z-index: 1
-      width: 100%
-      height: 180px
-      top: -180px
-      text-align: left
-      -webkit-transition: all 300ms ease-out
-      -moz-transition: all 300ms ease-out
-      -o-transition: all 300ms ease-out
-      -ms-transition: all 300ms ease-out
-      transition: all 300ms ease-out
+//ul
+//  li
+//    list-style-type: disc
+//    margin-left: 20px
 
-    .content
-      padding: 10px
+//.wrapper
+//  background: transparent url(/assets/bg_img.png) no-repeat
+//  width: 900px
+//  min-height: 100%
+//  margin: 0 auto
 
-      small
-        font-size: 0.7em
+//.clear
+//  clear: both
 
-        &.red
-          color: red
-          display: block
+//h1
+//  font-size: 20px
+//  margin-bottom: 20px
+//  font-weight: bold
 
-    &:hover .caption
-      opacity: 1
-      -moz-transform: translateY(100%)
-      -o-transform: translateY(100%)
-      -webkit-transform: translateY(100%)
-      transform: translateY(100%)
+//#hd
+//  height: 150px
+//  font-size: 20px
+//  font-family: Tahoma, Arial, Helvetica, sans-serif
 
-.post
-  border: 1px dashed #333
-  padding: 20px 30px
+//  .logo
+//    float: right
+//    margin-top: 50px
 
-  &.full
-    border: none
+//  ul.header
+//    float: left
+//    font-size: 25px
+//    margin-top: 70px
+//    height: 50px
 
-  .highlight
-    background: rgba(99, 99, 99, 0.37)
-    padding: 10px
+//    li
+//      float: left
+//      margin-left: 50px
+//      padding: 0 10px
+//      list-style-type: none
 
-  .no-bg .highlight
-    background: 0
-    padding: 0
+//      a
+//        color: #666
 
-  .header
-    background: #e0e0e0
-    border: 1px solid #999
-    border-bottom: 0
-    color: #333
-    padding: 3px
+//      &.current a, &:hover a
+//        color: #ccc
+//        text-decoration: none
 
-  a
-    color: #326191
+//.form
+//  h1
+//    font-size: 15px
+//    font-weight: bold
+//    margin-bottom: 20px
 
-  h1
-    font-size: 20px
-    font-weight: bold
-    margin-bottom: 10px
+//  .field
+//    clear: both
+//    min-height: 20px
+//    margin-bottom: 10px
 
-    small
-      font-size: 11px
-      font-weight: normal
-      display: block
-      color: #326191
+//    label
+//      float: left
+//      min-width: 100px
+//      line-height: 25px
+//      margin-right: 20px
 
-#main
-  width: 750px
-  float: left
+//    textarea
+//      font-size: 12px
 
-#sidebar
-  min-height: 500px
-  width: 150px
-  float: right
+//.portfolio-gallery
+//  .image-container
+//    width: 100%
+//    height: 100%
+//    background-repeat: no-repeat
+//    background-size: cover
+//    background-position: center 0
 
-  .sidebar
-    padding-left: 10px
+//  .box
+//    cursor: pointer
+//    height: 180px
+//    float: left
+//    margin: 10px 1.5%
+//    position: relative
+//    overflow: hidden
+//    width: 30%
+//    text-align: center
 
-  ul
-    padding-left: 5px
+//    .caption
+//      background-color: rgba(0,0,0,0.8)
+//      position: absolute
+//      color: #fff
+//      z-index: 1
+//      width: 100%
+//      height: 180px
+//      top: -180px
+//      text-align: left
+//      -webkit-transition: all 300ms ease-out
+//      -moz-transition: all 300ms ease-out
+//      -o-transition: all 300ms ease-out
+//      -ms-transition: all 300ms ease-out
+//      transition: all 300ms ease-out
 
-  li
-    list-style-type: disc
+//    .content
+//      padding: 10px
 
-  ul.links
-    li
-      float: left
-      list-style-type: none
-      margin: 0 0 3px
-      padding: 0
-      width: 50%
+//      small
+//        font-size: 0.7em
 
-    a
-      border-radius: 100px
+//        &.red
+//          color: red
+//          display: block
 
-.height
-  line-height: 20px
-  min-height: 30px
+//    &:hover .caption
+//      opacity: 1
+//      -moz-transform: translateY(100%)
+//      -o-transform: translateY(100%)
+//      -webkit-transform: translateY(100%)
+//      transform: translateY(100%)
 
-  label
-    float: left
-    min-width: 200px
-    text-align: right
-    margin-right: 10px
+//.post
+//  border: 1px dashed #333
+//  padding: 20px 30px
 
-.comment
-  border-top: 1px solid #808080
-  font-size: 12px
-  padding: 10px 30px
+//  &.full
+//    border: none
 
-  .title
-    font-weight: bold
+//  .highlight
+//    background: rgba(99, 99, 99, 0.37)
+//    padding: 10px
 
-    a
-      color: white
+//  .no-bg .highlight
+//    background: 0
+//    padding: 0
 
-    small
-      color: #808080
-      font-size: 11px
-      font-weight: normal
+//  .header
+//    background: #e0e0e0
+//    border: 1px solid #999
+//    border-bottom: 0
+//    color: #333
+//    padding: 3px
 
-  .txt
-    margin-top: 10px
+//  a
+//    color: #326191
 
-.comment_form
-  clear: both
-  border-top: 1px solid #808080
-  padding: 10px 30px
+//  h1
+//    font-size: 20px
+//    font-weight: bold
+//    margin-bottom: 10px
 
-  form
-    width: 330px
+//    small
+//      font-size: 11px
+//      font-weight: normal
+//      display: block
+//      color: #326191
 
-    .height label
-      min-width: 60px
+//#main
+//  width: 750px
+//  float: left
 
-    input[type='text'], textarea
-      width: 250px
-      padding: 2px
+//#sidebar
+//  min-height: 500px
+//  width: 150px
+//  float: right
 
-    input[type='submit']
-      float: right
+//  .sidebar
+//    padding-left: 10px
 
-.tag
-  color: white
+//  ul
+//    padding-left: 5px
 
-*.error
-  input, textarea
-    border-color: red
+//  li
+//    list-style-type: disc
 
-.contact_form, .comment_form
-  color: white
+//  ul.links
+//    li
+//      float: left
+//      list-style-type: none
+//      margin: 0 0 3px
+//      padding: 0
+//      width: 50%
 
-  p
-    text-align: center
-    padding: 20px 30px
+//    a
+//      border-radius: 100px
 
-  input, textarea
-    border: 1px dashed #333
-    background-color: transparent
-    color: white
-    padding: 5px
-    border-radius: 5px
-    -moz-border-radius: 5px
-    -webkit-border-radius: 5px
+//.height
+//  line-height: 20px
+//  min-height: 30px
 
-    &:focus
-      border-color: #326191
+//  label
+//    float: left
+//    min-width: 200px
+//    text-align: right
+//    margin-right: 10px
 
-  .field_with_errors 
-    input, textarea
-      border-color: red
+//.comment
+//  border-top: 1px solid #808080
+//  font-size: 12px
+//  padding: 10px 30px
 
-*.nice-border
-  margin-bottom: 20px
-  background-color: rgba(51,51,51,0.37)
-  border: 1px dashed #333
-  border-radius: 20px
-  -moz-border-radius: 20px
-  -webkit-border-radius: 20px
+//  .title
+//    font-weight: bold
 
-.footer
-  background-color: rgba(33,33,33,0.7)
-  padding: 10px 0
-  clear: both
+//    a
+//      color: white
 
-  .footer_text
-    width: auto
-    margin-right: 20px
-    text-align: right
+//    small
+//      color: #808080
+//      font-size: 11px
+//      font-weight: normal
 
-.pagination
-  margin: 40px 0 20px
-  text-align: center
+//  .txt
+//    margin-top: 10px
 
-  span.disabled
-    display: none
+//.comment_form
+//  clear: both
+//  border-top: 1px solid #808080
+//  padding: 10px 30px
 
-  a, em
-    padding: 5px
-    border: 1px solid #ccc
-    text-decoration: none
+//  form
+//    width: 330px
 
-  a:hover, em
-    background-color: #ccc
-    color: #000
+//    .height label
+//      min-width: 60px
 
-.icon
-  background-image: image-url('icon-sprite.png')
-  height: 64px
-  width: 64px
-  display: block
+//    input[type='text'], textarea
+//      width: 250px
+//      padding: 2px
 
-  &.icon-only
-    color: transparent
+//    input[type='submit']
+//      float: right
 
-  &.icon-github
-    background-position: 0 -74px
+//.tag
+//  color: white
 
-  &.icon-linkedin
-    background-position: -740px -148px
+//*.error
+//  input, textarea
+//    border-color: red
 
-  &.icon-twitter
-    background-position: -888px -148px
+//.contact_form, .comment_form
+//  color: white
 
-  &.icon-facebook
-    background-position: -74px 0
+//  p
+//    text-align: center
+//    padding: 20px 30px
 
-  &.icon-skype
-    background-position: -814px -148px
+//  input, textarea
+//    border: 1px dashed #333
+//    background-color: transparent
+//    color: white
+//    padding: 5px
+//    border-radius: 5px
+//    -moz-border-radius: 5px
+//    -webkit-border-radius: 5px
 
-  &.icon-stackoverflow
-    background-position: -296px -370px
+//    &:focus
+//      border-color: #326191
+
+//  .field_with_errors 
+//    input, textarea
+//      border-color: red
+
+//*.nice-border
+//  margin-bottom: 20px
+//  background-color: rgba(51,51,51,0.37)
+//  border: 1px dashed #333
+//  border-radius: 20px
+//  -moz-border-radius: 20px
+//  -webkit-border-radius: 20px
+
+//.footer
+//  background-color: rgba(33,33,33,0.7)
+//  padding: 10px 0
+//  clear: both
+
+//  .footer_text
+//    width: auto
+//    margin-right: 20px
+//    text-align: right
+
+//.pagination
+//  margin: 40px 0 20px
+//  text-align: center
+
+//  span.disabled
+//    display: none
+
+//  a, em
+//    padding: 5px
+//    border: 1px solid #ccc
+//    text-decoration: none
+
+//  a:hover, em
+//    background-color: #ccc
+//    color: #000
+
+//.icon
+//  background-image: image-url('icon-sprite.png')
+//  height: 64px
+//  width: 64px
+//  display: block
+
+//  &.icon-only
+//    color: transparent
+
+//  &.icon-github
+//    background-position: 0 -74px
+
+//  &.icon-linkedin
+//    background-position: -740px -148px
+
+//  &.icon-twitter
+//    background-position: -888px -148px
+
+//  &.icon-facebook
+//    background-position: -74px 0
+
+//  &.icon-skype
+//    background-position: -814px -148px
+
+//  &.icon-stackoverflow
+//    background-position: -296px -370px

@@ -16,6 +16,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'thin'
 gem 'uglifier'
 gem 'will_paginate'
+gem 'foundation-rails'
 
 group :development do
   gem 'pry'

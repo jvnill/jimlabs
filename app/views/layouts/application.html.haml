@@ -2,29 +2,29 @@
 %html
   %head
     %link{ rel: 'icon', href: '/favicon.ico', type: 'image/png' }
-    %meta{ content: 'text/html;charset=UTF-8', 'http-equiv' => 'content-type' }
+
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
 
     = meta_tags
+
     %title= page_title
 
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application'
+
     = yield :head
 
     = csrf_meta_tags
 
   %body
-    .wrapper
-      #hd= render 'shared/header'
+    = render 'shared/header'
 
-      - if @no_sidebar
-        = yield
+    .row
+      .small-3.columns &nbsp;
+      .small-14.columns= yield
+      .small-4.columns= render 'shared/sidebar'
+      .small-3.columns &nbsp;
 
-      - else
-        #main
-          #content
-            #yield= yield
-
-        #sidebar= render 'shared/sidebar'
-
-    .footer= render 'shared/footer'
+    = render 'shared/footer'
