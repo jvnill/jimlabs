@@ -2,7 +2,6 @@ ruby '2.1.2'
 
 source 'https://rubygems.org'
 
-gem 'acts_as_commentable'
 gem 'acts-as-taggable-on'
 gem 'coderay'
 gem 'coffee-rails', '~> 4.0.0'
