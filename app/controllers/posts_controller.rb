@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :login_required, only: [:show, :index]
-
+  before_action :login_required, only: [:new, :create, :edit, :update, :destroy]
   before_action :fetch_post, only: [:show, :edit, :update]
   before_action :set_section
 
@@ -32,7 +31,6 @@ class PostsController < ApplicationController
   def show
     @page_title = @post.title
     @meta       = { keywords: @post.tag_list, description: Array(@post.meta) }
-    @comment    = Comment.new(commentable_id: @post.id, commentable_type: 'Post')
     @comments   = @post.comments.approved
   end
 

@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
-  before_filter :set_section
-
-  skip_before_filter :login_required, only: [:show, :index]
+  before_action :set_section
+  before_action :login_required,  only: [:new, :create, :edit, :update, :destroy]
+  before_action :fetch_portfolio, only: [:edit, :update, :destroy]
 
   def index
     @portfolios = Portfolio.all
@@ -12,7 +12,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = Portfolio.new(params[:portfolio])
+    @portfolio = Portfolio.new(portfolio_params)
 
     if @portfolio.save
       redirect_to portfolio_index_path
@@ -21,14 +21,8 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def edit
-    @portfolio = Portfolio.find(params[:id])
-  end
-
   def update
-    @portfolio = Portfolio.find(params[:id])
-
-    if @portfolio.update_attributes(params[:portfolio])
+    if @portfolio.update_attributes(portfolio_params)
       redirect_to portfolio_index_path
     else
       render :edit
@@ -36,8 +30,7 @@ class PortfoliosController < ApplicationController
   end
 
   def destroy
-    portfolio = Portfolio.find(params[:id])
-    portfolio.destroy
+    @portfolio.destroy
 
     redirect_to portfolio_index_path
   end
@@ -46,5 +39,13 @@ class PortfoliosController < ApplicationController
 
   def set_section
     @section = 'portfolio'
+  end
+
+  def fetch_portfolio
+    @portfolio = Portfolio.find(params[:id])
+  end
+
+  def portfolio_params
+    params.require(:portfolio).permit(:title, :short_description, :url, :image_url, :active_site)
   end
 end
