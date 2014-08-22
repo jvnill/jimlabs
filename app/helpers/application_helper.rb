@@ -2,8 +2,7 @@ module ApplicationHelper
   include TagsHelper
 
   def page_title
-    static = "Jimlabs: Jim Ruther Nill's Ruby on Rails blog and portfolio"
-    @page_title ? "#{@page_title} | #{static}" : static
+    [@page_title, 'Jimlabs | Jim Ruther Nill | Ruby on Rails blog and portfolio'].compact.join(' | ')
   end
 
   def tabbed_link_to(name, url, section, options = {})
