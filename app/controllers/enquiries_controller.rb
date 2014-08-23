@@ -1,8 +1,6 @@
 class EnquiriesController < ApplicationController
   before_action :set_section
 
-  skip_before_action :login_required, only: [:new, :create]
-
   def new
     @enquiry = Enquiry.new
   end

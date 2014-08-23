@@ -12,7 +12,4 @@
             %h3= portfolio.title
             %small.red Inactive site
 
-          - if logged_in?
-            %small= link_to 'Edit', [:edit, portfolio]
-
           %small= portfolio.short_description

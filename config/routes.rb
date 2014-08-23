@@ -1,10 +1,7 @@
 Jimlabs3::Application.routes.draw do
-  root to: "pages#index"
+  root 'pages#index'
 
-  resource :session
-
-  resources :enquiries, only: [:index, :new, :create, :destroy]
-  resources :comments, only: [:create, :index, :update]
+  resources :enquiries, only: [:new, :create]
   resources :portfolios, only: [:new, :create, :edit, :update, :destroy]
 
   resources :posts do
@@ -18,10 +15,7 @@ Jimlabs3::Application.routes.draw do
   get '/admin'             => 'sessions#new',     as: :admin
   get '/tags/:tag_name'    => 'tags#show',        as: :tag
   get '/sitemap(.:format)' => 'pages#sitemap',    as: :sitemap, defaults: { format: :xml }
-  get '/blog/rss/feed'     => 'posts#index', constraints: { format: 'rss' }
-  get '/blog/:id/rss/feed' => 'posts#show',  constraints: { format: 'rss' }
-
-  delete '/logout'         => 'sessions#destroy', as: :logout
-
+  get '/blog/rss/feed'     => 'posts#index',      constraints: { format: 'rss' }
+  get '/blog/:id/rss/feed' => 'posts#show',       constraints: { format: 'rss' }
   get '*url'               => 'pages#page_not_found'
 end

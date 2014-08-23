@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.tagcanvas.min
 //= require_tree .
 
 $(function() { $(document).foundation() })

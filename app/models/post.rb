@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
   acts_as_taggable_on :tags
-  acts_as_commentable
 
   validates_presence_of :title, :body
 
@@ -17,8 +16,8 @@ class Post < ActiveRecord::Base
   def self.count_by_year
     Post
       .published
-      .group('DATE_PART(\'YEAR\', posts.created_at)')
-      .order('date_part_year_posts_created_at DESC')
+      .group('DATE_PART(\'YEAR\', posts.created_at)::int')
+      .order('date_part_year_posts_created_at_int DESC')
       .count(:id)
   end
 
@@ -34,7 +33,9 @@ class Post < ActiveRecord::Base
     path
   end
 
+  private
+
   def set_path
-    self.path = title.downcase.gsub(/[^A-Za-z0-9]+/, '-') if path.blank?
+    self.path = title.parameterize if path.blank?
   end
 end

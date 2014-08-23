@@ -1,6 +1,4 @@
 module ApplicationHelper
-  include TagsHelper
-
   def page_title
     [@page_title, 'Jimlabs | Jim Ruther Nill | Ruby on Rails blog and portfolio'].compact.join(' | ')
   end
@@ -42,23 +40,23 @@ module ApplicationHelper
     markdown_renderer.render(text).html_safe
   end
 
-  def markdown_renderer
-    renderer = CoderayCodeBlocks.new hard_wrap: true, filter_html: true
-    Redcarpet::Markdown.new renderer, autolink: true, no_intra_emphasis: true, fenced_code_blocks: true
-  end
-
   def tag_links(obj)
-    obj.tag_list.collect {|tag| link_to(tag, tag_path(tag), :class => 'tag')}.join(', ').html_safe
+    obj.tag_list.map do |tag|
+      link_to(tag, tag_path(tag), class: 'tag')
+    end.join(', ').html_safe
   end
 
-  def close_div_tag(string)
-    opening = string.scan(/<div/).size
-    closing = string.scan(/<\/div/).size
+  private
 
-    (opening - closing).times do
-      string += '</div>'
-    end
+  def markdown_renderer
+    Redcarpet::Markdown.new(renderer,
+      autolink: true,
+      no_intra_emphasis: true,
+      fenced_code_blocks: true
+    )
+  end
 
-    string
+  def renderer
+    CoderayCodeBlocks.new(hard_wrap: true, filter_html: true)
   end
 end

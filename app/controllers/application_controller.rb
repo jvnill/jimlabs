@@ -1,17 +1,13 @@
 class ApplicationController < ActionController::Base
+  USERS = { ENV['DIGEST_USERNAME'] => ENV['DIGEST_PASSWORD'] }
+
   protect_from_forgery
-  prepend_before_filter :login_required
-  helper_method :logged_in?
 
-  def logged_in?
-    !!current_user
-  end
-
-  def current_user
-    @user ||= User.where(id: session[:user_id]).first
-  end
+  private
 
   def login_required
-    redirect_to root_path unless current_user
+    authenticate_or_request_with_http_digest do |username|
+      USERS[username]
+    end
   end
 end

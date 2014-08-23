@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+  - 2.1.2
+cache:
+  bundler: true
+addons:
+  code_climate:
+    repo_token: 840ae8815e3cc48f92fc55546dd6c0082806bc092b94d30dcbd63a333036a25b
+script:
+  - bundle exec rspec
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database jimlabs_test;' -U postgres
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+after_script:
+  - cat lcov.info | codeclimate
