@@ -50,15 +50,4 @@ module ApplicationHelper
   def tag_links(obj)
     obj.tag_list.collect {|tag| link_to(tag, tag_path(tag), :class => 'tag')}.join(', ').html_safe
   end
-
-  def close_div_tag(string)
-    opening = string.scan(/<div/).size
-    closing = string.scan(/<\/div/).size
-
-    (opening - closing).times do
-      string += '</div>'
-    end
-
-    string
-  end
 end
