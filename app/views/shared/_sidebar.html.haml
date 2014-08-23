@@ -2,7 +2,7 @@
   Blog Archives
   %ul
     - Post.count_by_year.each do |year, count|
-      %li= link_to "#{year.to_i} (#{count})", year_posts_path(year.to_i)
+      %li= link_to "#{year} (#{count})", year_posts_path(year)
 
   #flashcontent
 
