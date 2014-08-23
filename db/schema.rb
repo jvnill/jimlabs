@@ -9,11 +9,14 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140806184720) do
+ActiveRecord::Schema.define(version: 20140823181034) do
 
-  create_table "comments", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
     t.string   "comment"
     t.integer  "commentable_id"
     t.string   "commentable_type"
@@ -21,10 +24,10 @@ ActiveRecord::Schema.define(:version => 20140806184720) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status",           :default => "pending"
+    t.string   "status",           default: "pending"
   end
 
-  create_table "enquiries", :force => true do |t|
+  create_table "enquiries", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "company"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20140806184720) do
     t.datetime "updated_at"
   end
 
-  create_table "portfolios", :force => true do |t|
+  create_table "portfolios", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
@@ -41,10 +44,10 @@ ActiveRecord::Schema.define(:version => 20140806184720) do
     t.string   "url"
     t.string   "image_url"
     t.string   "short_description"
-    t.boolean  "active_site",       :default => true
+    t.boolean  "active_site",       default: true
   end
 
-  create_table "posts", :force => true do |t|
+  create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.string   "path"
@@ -53,10 +56,10 @@ ActiveRecord::Schema.define(:version => 20140806184720) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_tag_list"
-    t.integer  "truncate_length", :default => 80
+    t.integer  "truncate_length", default: 80
   end
 
-  create_table "taggings", :force => true do |t|
+  create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
@@ -66,14 +69,15 @@ ActiveRecord::Schema.define(:version => 20140806184720) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
-  create_table "tags", :force => true do |t|
-    t.string "name"
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: true do |t|
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"

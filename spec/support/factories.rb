@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :enquiry do
+    message 'Message'
+    name 'Jim'
+    email 'jim@example.com'
+  end
+
   factory :portfolio do
     title 'Portfolio'
     short_description 'Description'

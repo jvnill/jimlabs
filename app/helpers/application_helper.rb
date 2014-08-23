@@ -40,12 +40,23 @@ module ApplicationHelper
     markdown_renderer.render(text).html_safe
   end
 
-  def markdown_renderer
-    renderer = CoderayCodeBlocks.new hard_wrap: true, filter_html: true
-    Redcarpet::Markdown.new renderer, autolink: true, no_intra_emphasis: true, fenced_code_blocks: true
+  def tag_links(obj)
+    obj.tag_list.map do |tag|
+      link_to(tag, tag_path(tag), class: 'tag')
+    end.join(', ').html_safe
   end
 
-  def tag_links(obj)
-    obj.tag_list.collect {|tag| link_to(tag, tag_path(tag), :class => 'tag')}.join(', ').html_safe
+  private
+
+  def markdown_renderer
+    Redcarpet::Markdown.new(renderer,
+      autolink: true,
+      no_intra_emphasis: true,
+      fenced_code_blocks: true
+    )
+  end
+
+  def renderer
+    CoderayCodeBlocks.new(hard_wrap: true, filter_html: true)
   end
 end
