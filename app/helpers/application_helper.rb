@@ -1,6 +1,4 @@
 module ApplicationHelper
-  include TagsHelper
-
   def page_title
     [@page_title, 'Jimlabs | Jim Ruther Nill | Ruby on Rails blog and portfolio'].compact.join(' | ')
   end

@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   def sitemap
     @posts      = Post.published
-    @portfolios = Portfolio.published
+    @portfolios = Portfolio.all
   end
 
   def page_not_found

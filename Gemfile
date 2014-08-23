@@ -16,8 +16,11 @@ gem 'thin'
 gem 'uglifier'
 gem 'will_paginate'
 
-group :development do
+group :development, :test do
   gem 'pry'
+end
+
+group :development do
   gem 'mailcatcher'
   gem 'spring'
 end
