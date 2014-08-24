@@ -18,8 +18,16 @@ describe ApplicationController do
 
     context 'successful auth' do
       before do
-        request.env['HTTP_AUTHORIZATION'] = 'asd'
-        allow(ActionController::HttpAuthentication::Digest).to receive(:validate_digest_response).and_return(true)
+        request.env['HTTP_AUTHORIZATION'] = 'Digest realm="Application", opaque="foo", username="uname", response="response", uri="/"'
+        request.env['DIGEST_USERNAME'] = 'uname'
+        request.env['DIGEST_PASSWORD'] = 'pword'
+
+        ApplicationController::USERS['uname'] = 'pword'
+
+        allow(ActionController::HttpAuthentication::Digest).to receive(:validate_nonce).and_return(true)
+        allow(ActionController::HttpAuthentication::Digest).to receive(:opaque).and_return('foo')
+        allow(ActionController::HttpAuthentication::Digest).to receive(:expected_response).and_return('response')
+
         get :index
       end
 
