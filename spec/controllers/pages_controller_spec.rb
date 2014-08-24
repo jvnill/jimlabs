@@ -24,8 +24,4 @@ describe PagesController do
     it { expect(assigns(:posts)).to eql('posts') }
     it { expect(assigns(:portfolios)).to eql('portfolios') }
   end
-
-  describe 'GET page_not_found' do
-    pending
-  end
 end
