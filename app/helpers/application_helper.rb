@@ -46,6 +46,15 @@ module ApplicationHelper
     end.join(', ').html_safe
   end
 
+  def years_experience
+    days = (Date.today - Date.new(2008, 5)).to_i
+
+    "#{days / 365} years".tap do |string|
+      months = (days % 365) / 30
+      string << " #{months} months" if months > 0
+    end
+  end
+
   private
 
   def markdown_renderer

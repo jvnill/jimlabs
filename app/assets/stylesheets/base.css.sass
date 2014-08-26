@@ -6,26 +6,38 @@ html, body
   background: #FFF
   color: #000
   font-size: 1em
+  height: 100%
 
-.header
-  h1
-    margin: 0
-    text-align: center
-    font-size: 1em
-    margin-top: 0.5em
+a
+  color: #666
 
-  .right dd
-    line-height: 50px
-    font-size: 1.5em
-    color: #AAA
-    text-transform: uppercase
-    font-weight: 100
+  &:hover
+    color: #000
 
-    &:hover
-      color: #888
+#wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto -4em
+
+#header h1
+  margin: 0
+  text-align: center
+  font-size: 1em
+  margin-top: 0.5em
+
+#footer, .push
+  height: 4em
+  line-height: 4em
+  text-align: center
 
 [data-magellan-expedition-clone]
   visibility: hidden
+
+.me-header img
+  height: 10em
+  float: left
+  margin: 0 1em 0 0
 
 //body
 //  background: transparent url(/assets/header_bg.png) repeat-x
@@ -339,29 +351,29 @@ html, body
 //    background-color: #ccc
 //    color: #000
 
-//.icon
-//  background-image: image-url('icon-sprite.png')
-//  height: 64px
-//  width: 64px
-//  display: block
+.icon
+  background-image: image-url('icon-sprite.png')
+  height: 64px
+  width: 64px
+  display: block
 
-//  &.icon-only
-//    color: transparent
+  &.icon-only
+    color: transparent
 
-//  &.icon-github
-//    background-position: 0 -74px
+  &.icon-github
+    background-position: 0 -74px
 
-//  &.icon-linkedin
-//    background-position: -740px -148px
+  &.icon-linkedin
+    background-position: -740px -148px
 
-//  &.icon-twitter
-//    background-position: -888px -148px
+  &.icon-twitter
+    background-position: -888px -148px
 
-//  &.icon-facebook
-//    background-position: -74px 0
+  &.icon-facebook
+    background-position: -74px 0
 
-//  &.icon-skype
-//    background-position: -814px -148px
+  &.icon-skype
+    background-position: -814px -148px
 
-//  &.icon-stackoverflow
-//    background-position: -296px -370px
+  &.icon-stackoverflow
+    background-position: -296px -370px

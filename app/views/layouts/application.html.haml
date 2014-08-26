@@ -21,12 +21,14 @@
     = csrf_meta_tags
 
   %body
-    = render 'shared/header'
+    #wrapper
+      #header{ data: { magellan_expedition: 'fixed' } }= render 'shared/header'
 
-    .row
-      .small-3.columns &nbsp;
-      .small-14.columns= yield
-      .small-4.columns= render 'shared/sidebar'
-      .small-3.columns &nbsp;
+      #body.row
+        .small-3.columns &nbsp;
+        .small-18.columns= yield
+        .small-3.columns &nbsp;
 
-    = render 'shared/footer'
+      .push
+
+    #footer= render 'shared/footer'
