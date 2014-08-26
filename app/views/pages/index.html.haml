@@ -1,9 +1,5 @@
 - content_for :head do
   %meta{ name: 'google-site-verification', content: 'y-DWD9KpC4v0v5sa8YI0_iMlbQ990rNT753IgDp6z_U' }
 
-.me-header
-  = image_tag 'https://dl.dropboxusercontent.com/u/32173582/jimlabs/me.jpg'
-  %div
-    I'm
-    %h1 Jim Ruther Nill
-    a Rails Developer with #{years_experience} professional experience living in the #{link_to 'Pearl of the Orient - Philippines', 'http://itsmorefuninthephilippines.com/'}.  I'm proudly married to a #{link_to 'really, really, really good children\'s book illustrator', 'http://behance.net/ninyanernel'} and a father of 1 very bright kid.  I am working for #{link_to 'NetEngine', 'http://netengine.com.au'} as a Rails Developer. I enjoy coding as much as watching tv series/movies, playing board games/rpgs/puzzles, and travel.
+= render 'personal_details'
+= render 'portfolio_gallery'

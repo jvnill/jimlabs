@@ -23,12 +23,7 @@
   %body
     #wrapper
       #header{ data: { magellan_expedition: 'fixed' } }= render 'shared/header'
-
-      #body.row
-        .small-3.columns &nbsp;
-        .small-18.columns= yield
-        .small-3.columns &nbsp;
-
+      #body= yield
       .push
 
     #footer= render 'shared/footer'
