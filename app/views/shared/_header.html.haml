@@ -3,16 +3,16 @@
     .small-3.columns &nbsp;
 
     .small-18.columns
-      %dl.sub-nav
-        .left
-          %dd
+      %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
+        %ul.title-area
+          %li.name
             = image_tag 'logo.png', alt: 'Jimlabs'
             %h1 Jim Ruther Nill's blog and portfolio
 
-        .right
-          %dd= tabbed_link_to 'me', root_path, 'home'
-          %dd= tabbed_link_to 'blog', posts_path, 'blog'
-          %dd= tabbed_link_to 'portfolio', portfolio_index_path, 'portfolio'
-          %dd= tabbed_link_to 'contact', contact_path, 'contactus'
+        %section.top-bar-section
+          = tabbed_link_to 'me', root_path, 'home'
+          = tabbed_link_to 'blog', posts_path, 'blog'
+          = tabbed_link_to 'portfolio', portfolio_index_path, 'portfolio'
+          = tabbed_link_to 'contact', contact_path, 'contactus'
 
     .small-3.columns &nbsp;

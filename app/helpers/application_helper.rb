@@ -5,9 +5,9 @@ module ApplicationHelper
 
   def tabbed_link_to(name, url, section, options = {})
     if @section == section
-      link_to("{#{name}}", url, options.merge({ class: 'current' }))
+      content_tag(:li, link_to("{#{name}}", url, options), class: 'current')
     else
-      link_to(name, url, options)
+      content_tag(:li, link_to(name, url, options))
     end
   end
 
