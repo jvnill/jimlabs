@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.tagcanvas.min
+//= require smooth-scroll
 //= require_tree .
 
 $(function() { $(document).foundation() })

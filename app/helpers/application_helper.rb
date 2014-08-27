@@ -3,11 +3,10 @@ module ApplicationHelper
     [@page_title, 'Jimlabs | Jim Ruther Nill | Ruby on Rails blog and portfolio'].compact.join(' | ')
   end
 
-  def tabbed_link_to(name, url, section, options = {})
-    if @section == section
-      content_tag(:li, link_to("{#{name}}", url, options), class: 'current')
-    else
-      content_tag(:li, link_to(name, url, options))
+  def waypoint_path(anchor)
+    ''.tap do |url|
+      url << '/' if controller_name != 'pages'
+      url << "##{anchor}"
     end
   end
 

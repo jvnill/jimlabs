@@ -7,21 +7,15 @@ describe ApplicationHelper do
     it { expect(helper.page_title).to eq('asd | Jimlabs | Jim Ruther Nill | Ruby on Rails blog and portfolio') }
   end
 
-  describe 'tabbed_link_to' do
-    context 'link matches section' do
-      before { helper.instance_variable_set('@section', 'foo') }
-
-      let!(:output) { helper.tabbed_link_to('test', '/test', 'foo') }
-
-      it { expect(output).to eq('<li class="current"><a href="/test">{test}</a></li>') }
+  describe 'waypoint_path' do
+    context 'controller is pages' do
+      it { expect(helper.waypoint_path('test')).to eq('/#test') }
     end
 
-    context 'link doesnt match section' do
-      before { helper.instance_variable_set('@section', 'bar') }
+    context 'controller is not pages' do
+      before { allow(helper).to receive(:controller_name).and_return('pages') }
 
-      let!(:output) { helper.tabbed_link_to('test', '/test', 'foo') }
-
-      it { expect(output).to eq('<li><a href="/test">test</a></li>') }
+      it { expect(helper.waypoint_path('test')).to eq('#test') }
     end
   end
 

@@ -1,4 +1,4 @@
-.row
+.row{ data: { scroll_header: true } }
   .small-3.columns &nbsp;
 
   .small-18.columns
@@ -10,9 +10,9 @@
 
       %section.top-bar-section
         %ul.right
-          = tabbed_link_to 'me', root_path(anchor: 'personal-details'), 'home'
-          = tabbed_link_to 'portfolio', root_path(anchor: 'portfolio'), 'portfolio'
-          = tabbed_link_to 'blog', posts_path, 'blog'
-          = tabbed_link_to 'contact', contact_path, 'contactus'
+          %li= link_to 'me', waypoint_path('me'), data: { scroll: true }
+          %li= link_to 'portfolio', waypoint_path('portfolio'), data: { scroll: true }
+          %li= link_to 'contact', waypoint_path('contact-me'), data: { scroll: true }
+          %li= link_to 'blog', posts_path
 
   .small-3.columns &nbsp;
