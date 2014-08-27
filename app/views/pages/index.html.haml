@@ -1,6 +1,6 @@
 - content_for :head do
   %meta{ name: 'google-site-verification', content: 'y-DWD9KpC4v0v5sa8YI0_iMlbQ990rNT753IgDp6z_U' }
 
-= render 'personal_details'
-= render 'portfolio_gallery'
-= render 'contact_me'
+%section.row#me= render 'personal_details'
+%section.row#portfolio= render 'portfolio_gallery'
+%section.row#contact-me= render 'contact_me'

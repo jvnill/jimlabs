@@ -138,23 +138,26 @@ a
 //    textarea
 //      font-size: 12px
 
-#portfolio
+section
   margin-top: 3em
   padding: 3em 0
-  background: #EEE
+
+  h2.title
+    letter-spacing: 0.5em
+    text-align: center
+    margin-bottom: 2em
+
+#portfolio
+  background: #444
 
   h2
-    letter-spacing: 0.5em
+    color: #FFF
 
   h3, h3 a
     color: #DDD
 
     &:hover
       color: #FFF
-
-  h2
-    text-align: center
-    margin-bottom: 2em
 
   .image-container
     width: 100%
@@ -204,6 +207,18 @@ a
       -o-transform: translateY(100%)
       -webkit-transform: translateY(100%)
       transform: translateY(100%)
+
+#contact-me
+  background: #EEE
+
+  a
+    border-radius: 100px
+    margin: 0 auto 3em
+    text-align: center
+
+    span
+      display: block
+      padding-top: 80px
 
 //.post
 //  border: 1px dashed #333
