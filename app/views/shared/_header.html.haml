@@ -1,11 +1,18 @@
-%ul.header
-  = tabbed_link_to 'me', root_path, 'home'
-  = tabbed_link_to 'blog', posts_path, 'blog'
-  = tabbed_link_to 'portfolio', portfolio_index_path, 'portfolio'
-  = tabbed_link_to 'contact', contact_path, 'contactus'
+.row
+  .small-3.columns &nbsp;
 
-.logo
-  = image_tag 'logo.png'
+  .small-18.columns
+    %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
+      %ul.title-area
+        %li.name
+          = image_tag 'logo.png', alt: 'Jimlabs'
+          %h1 Jim Ruther Nill's blog and portfolio
 
-  %h1{ style: 'text-align:center; font-size:12px; margin-top:5px;'}
-    Jim Ruther Nill's blog and portfolio
+      %section.top-bar-section
+        %ul.right
+          = tabbed_link_to 'me', root_path(anchor: 'personal-details'), 'home'
+          = tabbed_link_to 'portfolio', root_path(anchor: 'portfolio'), 'portfolio'
+          = tabbed_link_to 'blog', posts_path, 'blog'
+          = tabbed_link_to 'contact', contact_path, 'contactus'
+
+  .small-3.columns &nbsp;

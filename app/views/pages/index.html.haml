@@ -1,8 +1,5 @@
 - content_for :head do
   %meta{ name: 'google-site-verification', content: 'y-DWD9KpC4v0v5sa8YI0_iMlbQ990rNT753IgDp6z_U' }
 
-%p Welcome to Jimlabs: Jim Ruther Nill's blog and portfolio.
-%br
-- [@me, @skillset].each do |code|
-  .post.nice-border
-    .no-bg~ code.html_safe
+= render 'personal_details'
+= render 'portfolio_gallery'

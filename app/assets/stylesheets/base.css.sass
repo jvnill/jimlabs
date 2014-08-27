@@ -3,99 +3,158 @@
   padding: 0
 
 html, body
-  background: black url(/assets/bg.png)
-  color: white
-  font-family: 'Trebuchet MS', Tahoma, Arial, Helvetica, sans-serif
-  font-size: 18px
+  background: #FFF
+  color: #000
+  font-size: 1em
   height: 100%
 
-body
-  background: transparent url(/assets/header_bg.png) repeat-x
-
-textarea
-  font-family: 'Courier New',Courier,monospace
-
 a
-  text-decoration: none
-  color: #326191
+  color: #666
 
-p
-  margin: 20px 0
-  letter-spacing: 0.5px
+  &:hover
+    color: #000
 
-blockquote
-  background: #666
-  padding: 20px
-  border: #333
-
-ul
-  li
-    list-style-type: disc
-    margin-left: 20px
-
-.wrapper
-  background: transparent url(/assets/bg_img.png) no-repeat
-  width: 900px
+#wrapper
   min-height: 100%
-  margin: 0 auto
+  height: auto !important
+  height: 100%
+  margin: 0 auto -4em
 
-.clear
+#header h1
+  margin: 0
+  text-align: center
+  font-size: 1em
+  margin-top: 0.5em
+
+#footer, .push
+  height: 4em
+  line-height: 4em
+  text-align: center
+
+[data-magellan-expedition-clone]
+  visibility: hidden
+
+.me-header
+  margin-top: 2em
+  font-size: 1.5em
+
+  h1
+    font-size: 3em
+
+  img
+    height: 20em
+    float: left
+    margin: 0 2em 0 0
+    font-size: 1em
+
+  a
+    margin: 0
+    padding: 0
+
+.clearfix
   clear: both
 
-h1
-  font-size: 20px
-  margin-bottom: 20px
-  font-weight: bold
+//body
+//  background: transparent url(/assets/header_bg.png) repeat-x
 
-#hd
-  height: 150px
-  font-size: 20px
-  font-family: Tahoma, Arial, Helvetica, sans-serif
+//textarea
+//  font-family: 'Courier New',Courier,monospace
 
-  .logo
-    float: right
-    margin-top: 50px
+//a
+//  text-decoration: none
+//  color: #326191
 
-  ul.header
-    float: left
-    font-size: 25px
-    margin-top: 70px
-    height: 50px
+//p
+//  margin: 20px 0
+//  letter-spacing: 0.5px
 
-    li
-      float: left
-      margin-left: 50px
-      padding: 0 10px
-      list-style-type: none
+//blockquote
+//  background: #666
+//  padding: 20px
+//  border: #333
 
-      a
-        color: #666
+//ul
+//  li
+//    list-style-type: disc
+//    margin-left: 20px
 
-      &.current a, &:hover a
-        color: #ccc
-        text-decoration: none
+//.wrapper
+//  background: transparent url(/assets/bg_img.png) no-repeat
+//  width: 900px
+//  min-height: 100%
+//  margin: 0 auto
 
-.form
-  h1
-    font-size: 15px
-    font-weight: bold
-    margin-bottom: 20px
+//.clear
+//  clear: both
 
-  .field
-    clear: both
-    min-height: 20px
-    margin-bottom: 10px
+//h1
+//  font-size: 20px
+//  margin-bottom: 20px
+//  font-weight: bold
 
-    label
-      float: left
-      min-width: 100px
-      line-height: 25px
-      margin-right: 20px
+//#hd
+//  height: 150px
+//  font-size: 20px
+//  font-family: Tahoma, Arial, Helvetica, sans-serif
 
-    textarea
-      font-size: 12px
+//  .logo
+//    float: right
+//    margin-top: 50px
 
-.portfolio-gallery
+//  ul.header
+//    float: left
+//    font-size: 25px
+//    margin-top: 70px
+//    height: 50px
+
+//    li
+//      float: left
+//      margin-left: 50px
+//      padding: 0 10px
+//      list-style-type: none
+
+//      a
+//        color: #666
+
+//      &.current a, &:hover a
+//        color: #ccc
+//        text-decoration: none
+
+//.form
+//  h1
+//    font-size: 15px
+//    font-weight: bold
+//    margin-bottom: 20px
+
+//  .field
+//    clear: both
+//    min-height: 20px
+//    margin-bottom: 10px
+
+//    label
+//      float: left
+//      min-width: 100px
+//      line-height: 25px
+//      margin-right: 20px
+
+//    textarea
+//      font-size: 12px
+
+#portfolio
+  margin-top: 3em
+  padding: 3em 0
+  background: #EEE
+
+  h3, h3 a
+    color: #DDD
+
+    &:hover
+      color: #FFF
+
+  h2
+    text-align: center
+    margin-bottom: 2em
+
   .image-container
     width: 100%
     height: 100%
@@ -104,7 +163,6 @@ h1
     background-position: center 0
 
   .box
-    cursor: pointer
     height: 180px
     float: left
     margin: 10px 1.5%
@@ -114,7 +172,7 @@ h1
     text-align: center
 
     .caption
-      background-color: rgba(0,0,0,0.8)
+      background-color: rgba(0,0,0,0.9)
       position: absolute
       color: #fff
       z-index: 1
@@ -132,7 +190,8 @@ h1
       padding: 10px
 
       small
-        font-size: 0.7em
+        font-size: 0.8em
+        line-height: 0.8em
 
         &.red
           color: red
@@ -145,181 +204,181 @@ h1
       -webkit-transform: translateY(100%)
       transform: translateY(100%)
 
-.post
-  border: 1px dashed #333
-  padding: 20px 30px
+//.post
+//  border: 1px dashed #333
+//  padding: 20px 30px
 
-  &.full
-    border: none
+//  &.full
+//    border: none
 
-  .highlight
-    background: rgba(99, 99, 99, 0.37)
-    padding: 10px
+//  .highlight
+//    background: rgba(99, 99, 99, 0.37)
+//    padding: 10px
 
-  .no-bg .highlight
-    background: 0
-    padding: 0
+//  .no-bg .highlight
+//    background: 0
+//    padding: 0
 
-  .header
-    background: #e0e0e0
-    border: 1px solid #999
-    border-bottom: 0
-    color: #333
-    padding: 3px
+//  .header
+//    background: #e0e0e0
+//    border: 1px solid #999
+//    border-bottom: 0
+//    color: #333
+//    padding: 3px
 
-  a
-    color: #326191
+//  a
+//    color: #326191
 
-  h1
-    font-size: 20px
-    font-weight: bold
-    margin-bottom: 10px
+//  h1
+//    font-size: 20px
+//    font-weight: bold
+//    margin-bottom: 10px
 
-    small
-      font-size: 11px
-      font-weight: normal
-      display: block
-      color: #326191
+//    small
+//      font-size: 11px
+//      font-weight: normal
+//      display: block
+//      color: #326191
 
-#main
-  width: 750px
-  float: left
+//#main
+//  width: 750px
+//  float: left
 
-#sidebar
-  min-height: 500px
-  width: 150px
-  float: right
+//#sidebar
+//  min-height: 500px
+//  width: 150px
+//  float: right
 
-  .sidebar
-    padding-left: 10px
+//  .sidebar
+//    padding-left: 10px
 
-  ul
-    padding-left: 5px
+//  ul
+//    padding-left: 5px
 
-  li
-    list-style-type: disc
+//  li
+//    list-style-type: disc
 
-  ul.links
-    li
-      float: left
-      list-style-type: none
-      margin: 0 0 3px
-      padding: 0
-      width: 50%
+//  ul.links
+//    li
+//      float: left
+//      list-style-type: none
+//      margin: 0 0 3px
+//      padding: 0
+//      width: 50%
 
-    a
-      border-radius: 100px
+//    a
+//      border-radius: 100px
 
-.height
-  line-height: 20px
-  min-height: 30px
+//.height
+//  line-height: 20px
+//  min-height: 30px
 
-  label
-    float: left
-    min-width: 200px
-    text-align: right
-    margin-right: 10px
+//  label
+//    float: left
+//    min-width: 200px
+//    text-align: right
+//    margin-right: 10px
 
-.comment
-  border-top: 1px solid #808080
-  font-size: 12px
-  padding: 10px 30px
+//.comment
+//  border-top: 1px solid #808080
+//  font-size: 12px
+//  padding: 10px 30px
 
-  .title
-    font-weight: bold
+//  .title
+//    font-weight: bold
 
-    a
-      color: white
+//    a
+//      color: white
 
-    small
-      color: #808080
-      font-size: 11px
-      font-weight: normal
+//    small
+//      color: #808080
+//      font-size: 11px
+//      font-weight: normal
 
-  .txt
-    margin-top: 10px
+//  .txt
+//    margin-top: 10px
 
-.comment_form
-  clear: both
-  border-top: 1px solid #808080
-  padding: 10px 30px
+//.comment_form
+//  clear: both
+//  border-top: 1px solid #808080
+//  padding: 10px 30px
 
-  form
-    width: 330px
+//  form
+//    width: 330px
 
-    .height label
-      min-width: 60px
+//    .height label
+//      min-width: 60px
 
-    input[type='text'], textarea
-      width: 250px
-      padding: 2px
+//    input[type='text'], textarea
+//      width: 250px
+//      padding: 2px
 
-    input[type='submit']
-      float: right
+//    input[type='submit']
+//      float: right
 
-.tag
-  color: white
+//.tag
+//  color: white
 
-*.error
-  input, textarea
-    border-color: red
+//*.error
+//  input, textarea
+//    border-color: red
 
-.contact_form, .comment_form
-  color: white
+//.contact_form, .comment_form
+//  color: white
 
-  p
-    text-align: center
-    padding: 20px 30px
+//  p
+//    text-align: center
+//    padding: 20px 30px
 
-  input, textarea
-    border: 1px dashed #333
-    background-color: transparent
-    color: white
-    padding: 5px
-    border-radius: 5px
-    -moz-border-radius: 5px
-    -webkit-border-radius: 5px
+//  input, textarea
+//    border: 1px dashed #333
+//    background-color: transparent
+//    color: white
+//    padding: 5px
+//    border-radius: 5px
+//    -moz-border-radius: 5px
+//    -webkit-border-radius: 5px
 
-    &:focus
-      border-color: #326191
+//    &:focus
+//      border-color: #326191
 
-  .field_with_errors 
-    input, textarea
-      border-color: red
+//  .field_with_errors 
+//    input, textarea
+//      border-color: red
 
-*.nice-border
-  margin-bottom: 20px
-  background-color: rgba(51,51,51,0.37)
-  border: 1px dashed #333
-  border-radius: 20px
-  -moz-border-radius: 20px
-  -webkit-border-radius: 20px
+//*.nice-border
+//  margin-bottom: 20px
+//  background-color: rgba(51,51,51,0.37)
+//  border: 1px dashed #333
+//  border-radius: 20px
+//  -moz-border-radius: 20px
+//  -webkit-border-radius: 20px
 
-.footer
-  background-color: rgba(33,33,33,0.7)
-  padding: 10px 0
-  clear: both
+//.footer
+//  background-color: rgba(33,33,33,0.7)
+//  padding: 10px 0
+//  clear: both
 
-  .footer_text
-    width: auto
-    margin-right: 20px
-    text-align: right
+//  .footer_text
+//    width: auto
+//    margin-right: 20px
+//    text-align: right
 
-.pagination
-  margin: 40px 0 20px
-  text-align: center
+//.pagination
+//  margin: 40px 0 20px
+//  text-align: center
 
-  span.disabled
-    display: none
+//  span.disabled
+//    display: none
 
-  a, em
-    padding: 5px
-    border: 1px solid #ccc
-    text-decoration: none
+//  a, em
+//    padding: 5px
+//    border: 1px solid #ccc
+//    text-decoration: none
 
-  a:hover, em
-    background-color: #ccc
-    color: #000
+//  a:hover, em
+//    background-color: #ccc
+//    color: #000
 
 .icon
   background-image: image-url('icon-sprite.png')

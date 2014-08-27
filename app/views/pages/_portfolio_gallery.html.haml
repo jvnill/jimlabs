@@ -1,0 +1,22 @@
+.row#portfolio
+  .small-3.columns &nbsp;
+
+  .small-18.columns
+    %h2 Portfolio
+
+    - @portfolios.each do |portfolio|
+      .box
+        .image-container{ style: "background-image:url(#{portfolio.image_url})" }
+
+        .caption
+          .content
+            - if portfolio.active_site?
+              %h3= link_to portfolio.title, portfolio.url
+
+            - else
+              %h3= portfolio.title
+              %small.red Inactive site
+
+            %small= portfolio.short_description
+
+  .small-3.columns &nbsp;

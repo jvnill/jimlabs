@@ -6,8 +6,7 @@ class PagesController < ApplicationController
       description: ["Jimlabs: Jim Ruther Nill\'s Ruby on Rails blog and portfolio"]
     }
 
-    @me        = File.read(Rails.root.join('lib', 'frontpage', 'me.html'))
-    @skillset  = File.read(Rails.root.join('lib', 'frontpage', 'skillset.html'))
+    @portfolios = Portfolio.all
   end
 
   def sitemap
@@ -17,7 +16,6 @@ class PagesController < ApplicationController
 
   def page_not_found
     @page_title = '404: Page Not Found'
-    @no_sidebar = true
 
     respond_to do |format|
       format.html

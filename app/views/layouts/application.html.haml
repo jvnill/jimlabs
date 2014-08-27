@@ -2,29 +2,28 @@
 %html
   %head
     %link{ rel: 'icon', href: '/favicon.ico', type: 'image/png' }
-    %meta{ content: 'text/html;charset=UTF-8', 'http-equiv' => 'content-type' }
+
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
 
     = meta_tags
+
     %title= page_title
 
-    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Roboto:400,100'
+
+    = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application'
+
     = yield :head
 
     = csrf_meta_tags
 
   %body
-    .wrapper
-      #hd= render 'shared/header'
+    #wrapper
+      #header{ data: { magellan_expedition: 'fixed' } }= render 'shared/header'
+      #body= yield
+      .push
 
-      - if @no_sidebar
-        = yield
-
-      - else
-        #main
-          #content
-            #yield= yield
-
-        #sidebar= render 'shared/sidebar'
-
-    .footer= render 'shared/footer'
+    #footer= render 'shared/footer'

@@ -5,9 +5,9 @@ module ApplicationHelper
 
   def tabbed_link_to(name, url, section, options = {})
     if @section == section
-      content_tag :li, link_to("{#{name}}", url, options), :class => 'current'
+      content_tag(:li, link_to("{#{name}}", url, options), class: 'current')
     else
-      content_tag :li, link_to(name, url, options)
+      content_tag(:li, link_to(name, url, options))
     end
   end
 
@@ -44,6 +44,15 @@ module ApplicationHelper
     obj.tag_list.map do |tag|
       link_to(tag, tag_path(tag), class: 'tag')
     end.join(', ').html_safe
+  end
+
+  def years_experience
+    days = (Date.today - Date.new(2008, 5)).to_i
+
+    "#{days / 365} years".tap do |string|
+      months = (days % 365) / 30
+      string << " #{months} months" if months > 0
+    end
   end
 
   private

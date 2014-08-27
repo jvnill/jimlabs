@@ -32,7 +32,34 @@ describe ApplicationHelper do
   end
 
   describe 'form_div' do
-    pending
+    context 'block not passed' do
+      it { expect(helper.form_div(Post.new, :id)).to be_nil }
+    end
+
+    context 'object has errors' do
+      let!(:output) do
+        post = Post.new
+        post.valid?
+
+        helper.form_div(post, :title, class: 'test') do
+          helper.content_tag(:li, 'foo')
+        end
+      end
+
+      it { expect(output).to eq('<div class="test error"><li>foo</li></div>') }
+    end
+
+    context 'object has no errors' do
+      let!(:post) { create(:post) }
+
+      let!(:output) do
+        helper.form_div(post, :title, class: 'test') do
+          helper.content_tag(:li, 'foo')
+        end
+      end
+
+      it { expect(output).to eq('<div class="test"><li>foo</li></div>') }
+    end
   end
 
   describe 'markdown' do
@@ -46,5 +73,9 @@ describe ApplicationHelper do
     let!(:output) { helper.tag_links(post) }
 
     it { expect(output).to eq('<a class="tag" href="/tags/foo">foo</a>, <a class="tag" href="/tags/bar">bar</a>') }
+  end
+
+  describe 'years_experience' do
+    it { expect(helper.years_experience).to match(/\d{1,2} years( \d{1,2} months)/) }
   end
 end
