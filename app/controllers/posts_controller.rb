@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   def post_params
     params
       .require(:post)
-      .permit(:title, :body, :path, :meta, :published, :truncate_length)
+      .permit(:title, :body, :path, :meta, :published, :truncate_length, :tag_list)
   end
 
   def fetch_post

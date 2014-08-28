@@ -25,10 +25,11 @@ describe PostsController do
     include_context 'user logged in'
 
     context 'valid post' do
-      before { post :create, post: attributes_for(:post) }
+      before { post :create, post: attributes_for(:post).merge(tag_list: 'tag1, tag2') }
 
       it { expect(response).to redirect_to(post_path(assigns(:post))) }
       it { expect(assigns(:post)).to be_persisted }
+      it { expect(assigns(:post).tag_list).to eql(%w[tag1 tag2]) }
     end
 
     context 'invalid post' do
