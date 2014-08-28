@@ -5,8 +5,9 @@
     %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
       %ul.title-area
         %li.name
-          = image_tag 'logo.png', alt: 'Jimlabs'
-          %h1 Jim Ruther Nill's blog and portfolio
+          = link_to root_url do
+            = image_tag 'logo.png', alt: 'Jimlabs'
+            %h1 Jim Ruther Nill's blog and portfolio
 
       .top-bar-section
         %ul.right
