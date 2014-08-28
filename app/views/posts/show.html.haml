@@ -1,13 +1,14 @@
-.post.full
-  %h1
-    = @post.title
+.row
+  .small-3.columns &nbsp;
 
-    %small
-      = @post.created_at.to_s(:min)
-      %br
-      Tags: #{tag_links(@post)}
+  .small-18.columns
+    .post.full
+      %h1= @post.title
+      .date= @post.created_at.to_s(:min)
+      .tags Tags: #{tag_links(@post)}
+      .content~ markdown @post.body
 
-  %div~ markdown @post.body
+  .small-3.columns &nbsp;
 
 -# @comments.each do |c|
   .comment

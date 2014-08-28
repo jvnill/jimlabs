@@ -1,9 +1,6 @@
-.post.nice-border
-  %h1
-    = link_to post.title, post_path(post)
-    %small
-      = post.created_at.to_s(:min)
-      %br
-      Tags:
-      = tag_links(post)
-  %div~ markdown post.body
+.post
+  %h1= link_to post.title, post_path(post)
+  .date= post.created_at.to_s(:min)
+  .tags Tags: #{tag_links(post)}
+  .content~ markdown post.body
+  .separator
