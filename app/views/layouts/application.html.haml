@@ -23,7 +23,9 @@
   %body
     #wrapper
       #header{ data: { magellan_expedition: 'fixed' } }= render 'shared/header'
-      #body= yield
+      #body
+        = yield
+        %p.show-for-small-only{ style: 'text-align:center;' }= link_to 'Blog', posts_path
       .push
 
     #footer= render 'shared/footer'

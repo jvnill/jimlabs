@@ -6,10 +6,10 @@
       %ul.title-area
         %li.name
           = link_to root_url do
-            = image_tag 'logo.png', alt: 'Jimlabs'
+            = image_tag 'logo.png', alt: 'Jimlabs', class: 'hide-for-small'
             %h1 Jim Ruther Nill's blog and portfolio
 
-      .top-bar-section
+      .top-bar-section.hide-for-small
         %ul.right
           %li= link_to 'me', waypoint_path('me'), data: { scroll: true }
           %li= link_to 'portfolio', waypoint_path('portfolio'), data: { scroll: true }
