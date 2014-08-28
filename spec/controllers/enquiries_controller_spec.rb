@@ -1,14 +1,6 @@
 require 'rails_helper'
 
 describe EnquiriesController do
-  describe 'GET new' do
-    before { get :new }
-
-    it { expect(response).to be_success }
-    it { expect(response).to render_template(:new) }
-    it { expect(assigns(:enquiry)).to be_new_record }
-  end
-
   describe 'POST create' do
     context 'valid enquiry' do
       before do
@@ -16,8 +8,7 @@ describe EnquiriesController do
         post :create, enquiry: { message: 'Msg', name: 'Jim', email: 'jim@example.com' }
       end
 
-      it { expect(response).to redirect_to('/contact') }
-      it { expect(flash[:notice]).to eql('Thank you for your enquiry!!') }
+      it { expect(response.body).to eql(' ') }
       it { expect(ActionMailer::Base.deliveries.size).to eql(1) }
     end
 
@@ -27,8 +18,7 @@ describe EnquiriesController do
         post :create, enquiry: { message: '', name: 'Jim', email: 'jim@example.com' }
       end
 
-      it { expect(response).to be_success }
-      it { expect(response).to render_template(:new) }
+      it { expect(response.body).to eql({ message: ['can\'t be blank'] }.to_json) }
       it { expect(ActionMailer::Base.deliveries.size).to eql(0) }
     end
   end

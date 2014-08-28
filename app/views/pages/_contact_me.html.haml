@@ -28,6 +28,40 @@
       = link_to 'http://stackoverflow.com/users/337166/jvnill', class: 'icon icon-stackoverflow', target: '_blank' do
         %span Stack Overflow
 
-    .clearfix
+  %h2.title{ style: 'margin-top:3em' } Send an Inquiry
+
+  .row
+    .small-5.columns &nbsp;
+
+    .small-14.columns
+      = form_for Enquiry.new do |f|
+        .row
+          .small-24.columns
+            %label
+              %span Name
+              = f.text_field :name
+
+        .row
+          .small-24.columns
+            %label
+              %span Email
+              = f.text_field :email
+
+        .row
+          .small-24.columns
+            %label
+              %span Company Name
+              = f.text_field :company
+
+        .row
+          .small-24.columns
+            %label
+              %span Message
+              = f.text_area :message, rows: 5
+
+        .row
+          .small-24.columns{ style: 'text-align:center;' }= f.submit 'Send', class: 'button'
+
+    .small-5.columns &nbsp;
 
 .small-3.columns &nbsp;

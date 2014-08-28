@@ -1,7 +1,7 @@
 Jimlabs3::Application.routes.draw do
   root 'pages#index'
 
-  resources :enquiries, only: [:new, :create]
+  resources :enquiries, only: [:create]
   resources :portfolios, only: [:new, :create, :edit, :update, :destroy]
 
   resources :posts do
