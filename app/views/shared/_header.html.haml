@@ -1,19 +1,14 @@
-.row{ data: { scroll_header: false } }
-  .small-3.columns &nbsp;
+.contain-to-grid
+  %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
+    %ul.title-area
+      %li.name
+        = link_to root_url do
+          = image_tag 'logo.png', alt: 'Jimlabs'
+          %h1 Jim Ruther Nill's blog and portfolio
 
-  .small-18.columns
-    %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
-      %ul.title-area
-        %li.name
-          = link_to root_url do
-            = image_tag 'logo.png', alt: 'Jimlabs'
-            %h1 Jim Ruther Nill's blog and portfolio
-
-      .top-bar-section
-        %ul.right
-          %li= link_to 'me', waypoint_path('me'), data: { scroll: true }
-          %li= link_to 'portfolio', waypoint_path('portfolio'), data: { scroll: true }
-          %li= link_to 'contact', waypoint_path('contact-me'), data: { scroll: true }
-          %li= link_to 'blog', posts_path
-
-  .small-3.columns &nbsp;
+    %section.top-bar-section
+      %ul.right
+        %li= link_to 'me', waypoint_path('me'), data: { scroll: true }
+        %li= link_to 'portfolio', waypoint_path('portfolio'), data: { scroll: true }
+        %li= link_to 'contact', waypoint_path('contact-me'), data: { scroll: true }
+        %li= link_to 'blog', posts_path

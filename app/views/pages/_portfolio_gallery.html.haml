@@ -1,21 +1,18 @@
-.small-3.columns &nbsp;
+.row
+  .small-12.column
+    %h2.title Portfolio
 
-.small-18.columns
-  %h2.title Portfolio
+    - @portfolios.each do |portfolio|
+      .box
+        .image-container{ style: "background-image:url(#{portfolio.image_url})" }
 
-  - @portfolios.each do |portfolio|
-    .box
-      .image-container{ style: "background-image:url(#{portfolio.image_url})" }
+        .caption
+          .content
+            - if portfolio.active_site?
+              %h3= link_to portfolio.title, portfolio.url
 
-      .caption
-        .content
-          - if portfolio.active_site?
-            %h3= link_to portfolio.title, portfolio.url
+            - else
+              %h3= portfolio.title
+              %small.red Inactive site
 
-          - else
-            %h3= portfolio.title
-            %small.red Inactive site
-
-          %small= portfolio.short_description
-
-.small-3.columns &nbsp;
+            %small= portfolio.short_description
