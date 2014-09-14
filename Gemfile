@@ -28,6 +28,8 @@ end
 
 group :test do
   gem 'codeclimate-test-reporter', require: nil
+  gem 'guard'
+  gem 'guard-rspec'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
