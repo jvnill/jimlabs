@@ -23,8 +23,38 @@
 
   %body
     #wrapper
-      #header= render 'shared/header'
-      #body= yield
+      .off-canvas-wrap{ data: { offcanvas: true } }
+        .inner-wrap
+          %nav.tab-bar.hide-for-large-up
+            %section.left-small
+              %a.left-off-canvas-toggle.menu-icon{ href: '#' }
+                %span
+
+            %section.middle.tab-bar-section.text-left
+              %h1.title Jimlabs | Jim Ruther Nill
+
+          %aside.left-off-canvas-menu
+            %ul.off-canvas-list
+              %li= content_tag(:label, 'Jimlabs')
+              = render 'shared/menu'
+
+          %section.main-section
+            .contain-to-grid.show-for-large-up
+              %nav.top-bar{ data: { topbar: true }, role: 'navigation' }
+                %ul.title-area
+                  %li.name
+                    %h1
+                      = link_to root_url do
+                        = image_tag 'logo.png', alt: 'Jimlabs'
+                        %div Jim Ruther Nill's blog and portfolio
+
+                %section.top-bar-section
+                  %ul.right= render 'shared/menu'
+
+            = yield
+
+          %a.exit-off-canvas
+
       .push
 
     #footer= render 'shared/footer'

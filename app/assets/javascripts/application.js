@@ -17,4 +17,8 @@
 //= require smooth-scroll
 //= require_tree .
 
-$(function() { $(document).foundation() })
+$(function() {
+  $(document).foundation({
+    offcanvas: { close_on_click: true }
+  })
+})
