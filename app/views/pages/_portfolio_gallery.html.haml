@@ -4,10 +4,10 @@
 
     - @portfolios.each do |portfolio|
       .row
-        .small-12.medium-4.column
+        .small-push-3.small-6.medium-reset-order.medium-4.column.small-text-center
           .image-container= image_tag portfolio.image_url(:square)
 
-        .small-12.medium-8.column
+        .small-12.medium-8.column.small-text-center
           - if portfolio.active_site?
             %h3= link_to portfolio.title, portfolio.url
 
