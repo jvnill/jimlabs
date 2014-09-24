@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       description: ["Jimlabs: Jim Ruther Nill\'s Ruby on Rails blog and portfolio"]
     }
 
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.order(:title)
   end
 
   def sitemap
