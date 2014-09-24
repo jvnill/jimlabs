@@ -3,16 +3,15 @@
     %h2.title Portfolio
 
     - @portfolios.each do |portfolio|
-      .box
-        .image-container{ style: "background-image:url(#{portfolio.image_url})" }
+      .row
+        .small-12.medium-4.column
+          .image-container= image_tag portfolio.image_url(:square)
 
-        .caption
-          .content
-            - if portfolio.active_site?
-              %h3= link_to portfolio.title, portfolio.url
+        .small-12.medium-8.column
+          - if portfolio.active_site?
+            %h3= link_to portfolio.title, portfolio.url
 
-            - else
-              %h3= portfolio.title
-              %small.red Inactive site
+          - else
+            %h3.inactive= portfolio.title
 
-            %small= portfolio.short_description
+          %span= portfolio.short_description
