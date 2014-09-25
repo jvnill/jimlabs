@@ -9,7 +9,7 @@ FactoryGirl.define do
     title 'Portfolio'
     short_description 'Description'
     url 'http://example.com'
-    image_url 'http://example.com/image.png'
+    identifier 'portfolio'
     active_site true
   end
 
