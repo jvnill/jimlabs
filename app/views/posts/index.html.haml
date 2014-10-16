@@ -1,4 +1,4 @@
 .row
   .small-12.column
-    = render @posts
+    = render partial: 'posts/post', collection: @posts, spacer_template: 'pages/ad'
     = will_paginate @posts
