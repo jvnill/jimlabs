@@ -78,4 +78,6 @@ Jimlabs3::Application.configure do
   }
 
   ActionMailer::Base.delivery_method = :smtp
+
+  config.middleware.use 'WwwMiddleware'
 end
