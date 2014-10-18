@@ -5,3 +5,9 @@
 [![Build Status](https://travis-ci.org/jvnill/jimlabs.svg?branch=master)](https://travis-ci.org/jvnill/jimlabs)
 
 [Hosted on Heroku](http://jimlabs.herokuapp.com)
+
+TODO
+* add related articles
+* add comments
+* add back to top links
+* add sitemap
