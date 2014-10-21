@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   def show
     @page_title = @post.title
     @meta       = { keywords: @post.tag_list, description: Array(@post.meta) }
+    @related    = Post.tagged_with(@post.tag_list, any: true).where.not(id: @post.id).limit(3)
   end
 
   def update

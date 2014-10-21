@@ -1,14 +1,23 @@
 .row
-  .small-3.columns &nbsp;
-
-  .small-18.columns
+  .small-12.columns
     .post.full
       %h1= @post.title
       .date= @post.created_at.to_s(:min)
       .tags Tags: #{tag_links(@post)}
       .content~ markdown @post.body
 
-  .small-3.columns &nbsp;
+- if @related.any?
+  = render 'pages/ad'
+
+  .row.section#related-articles
+    .small-12.columns
+      %h2.title.text-center Related Articles
+      %ul.small-block-grid-1.medium-block-grid-2
+        - @related.each do |post|
+          %li
+            = link_to post.title, post
+            %br
+            %small #{post.created_at.to_s(:min)} &mdash; #{tag_links(post)}
 
 -# @comments.each do |c|
   .comment
