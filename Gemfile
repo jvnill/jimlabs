@@ -1,4 +1,4 @@
-ruby '2.1.2'
+ruby '2.2.0'
 
 source 'https://rubygems.org'
 
@@ -7,9 +7,9 @@ gem 'coderay'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'nokogiri', '1.4.6'
+gem 'nokogiri'
 gem 'pg'
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.0'
 gem 'redcarpet'
 gem 'sass-rails', '~> 4.0.3'
 gem 'thin'
