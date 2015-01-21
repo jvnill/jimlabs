@@ -8,7 +8,7 @@ describe EnquiriesController do
         post :create, enquiry: { message: 'Msg', name: 'Jim', email: 'jim@example.com' }
       end
 
-      it { expect(response.body).to eql(' ') }
+      it { expect(response.body).to be_blank }
       it { expect(ActionMailer::Base.deliveries.size).to eql(1) }
     end
 

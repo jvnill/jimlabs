@@ -4,7 +4,7 @@ class EnquiriesController < ApplicationController
 
     if @enquiry.save
       render nothing: true
-      Notifier.contact_us(@enquiry).deliver
+      Notifier.contact_us(@enquiry).deliver_now
     else
       render json: @enquiry.errors, status: 400
     end

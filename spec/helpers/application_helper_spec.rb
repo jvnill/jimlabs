@@ -22,7 +22,10 @@ describe ApplicationHelper do
   describe 'meta_tags' do
     let!(:output) { helper.meta_tags }
 
-    it { expect(output).to eq("<meta content=\"Jimlabs | Jim Ruther Nill | Ruby on Rails blog and portfolio\" name=\"title\"></meta><meta content=\"Jim Ruther Nill\" name=\"author\"></meta><meta content=\"Jim Ruther Nill, Jimlabs, Ruby on Rails\" name=\"keywords\"></meta><meta content=\"Jimlabs: Jim Ruther Nill&#39;s Ruby on Rails blog and portfolio\" name=\"description\"></meta>") }
+    it { expect(output).to match("content=\"Jimlabs | Jim Ruther Nill | Ruby on Rails blog and portfolio\"") }
+    it { expect(output).to match("content=\"Jim Ruther Nill\"") }
+    it { expect(output).to match("content=\"Jim Ruther Nill, Jimlabs, Ruby on Rails\"") }
+    it { expect(output).to match("content=\"Jimlabs: Jim Ruther Nill&#39;s Ruby on Rails blog and portfolio\"") }
   end
 
   describe 'form_div' do
