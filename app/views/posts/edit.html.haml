@@ -1,4 +1,7 @@
-.form
+.row
+  %br
+  %h2 Edit
+
   = form_for @post do |f|
-    = render :partial => 'form', :locals => {:f => f}
-    = f.submit 'Create'
+    = render 'form', f: f
+    .text-center= f.submit 'Update', class: 'small button'

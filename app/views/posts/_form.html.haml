@@ -1,29 +1,34 @@
-.field
-  %label Title
-  = f.text_field :title
+.row
+  .small-12.column
+    %label Title
+    = f.text_field :title
 
-.field
-  %label Meta Description
-  = f.text_field :meta
+.row
+  .small-12.column
+    %label Meta Description
+    = f.text_field :meta
 
-.field
-  %label Path
-  = f.text_field :path
+.row
+  .small-12.column
+    %label Path
+    = f.text_field :path
 
-.field
-  %label Tags
-  = f.text_field :tag_list
+.row
+  .small-12.column
+    %label Tags
+    = f.text_field :tag_list
 
-.field
-  %label Truncate Length
-  = f.text_field :truncate_length
+.row
+  .small-6.column
+    %label &nbsp;
+    = f.check_box :published
+    Publish
 
-.field
-  %label &nbsp;
-  = f.check_box :published
-  Publish
+  .small-6.column
+    %label Truncate Length
+    = f.text_field :truncate_length
 
-.field
-  %label Body
-  = f.text_area :body, :row => 15, :cols => 70
-
+.row
+  .small-12.column
+    %label Body
+    = f.text_area :body, rows: 15, cols: 70

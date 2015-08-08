@@ -16,18 +16,21 @@ ActiveRecord::Schema.define(version: 20140924172314) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.string   "comment"
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.string   "name"
     t.string   "url"
+    t.string   "status",           default: "pending"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "status",           default: "pending"
   end
 
-  create_table "enquiries", force: true do |t|
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
+
+  create_table "enquiries", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "company"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140924172314) do
     t.datetime "updated_at"
   end
 
-  create_table "portfolios", force: true do |t|
+  create_table "portfolios", force: :cascade do |t|
     t.string   "url"
     t.string   "title"
     t.text     "body"
@@ -47,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140924172314) do
     t.string   "identifier"
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.string   "path"
@@ -59,7 +62,7 @@ ActiveRecord::Schema.define(version: 20140924172314) do
     t.integer  "truncate_length", default: 80
   end
 
-  create_table "taggings", force: true do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
@@ -72,14 +75,14 @@ ActiveRecord::Schema.define(version: 20140924172314) do
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"

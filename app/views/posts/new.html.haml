@@ -1,5 +1,7 @@
-.form
-  %h1 Add a Blog
+.row
+  %br
+  %h2 Add a Blog
+
   = form_for @post do |f|
-    = render :partial => 'form', :locals => {:f => f}
-    %center= f.submit 'Create'
+    = render 'form', f: f
+    .text-center= f.submit 'Create', class: 'small button'
