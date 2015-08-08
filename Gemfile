@@ -1,4 +1,4 @@
-ruby '2.2.0'
+ruby '2.2.2'
 
 source 'https://rubygems.org'
 
@@ -9,7 +9,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'pg'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.3'
 gem 'redcarpet'
 gem 'sass-rails', '~> 4.0.3'
 gem 'thin'
